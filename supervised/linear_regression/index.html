@@ -1,0 +1,1930 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://harish-tamilarasan.github.io/ML_Engineer_From_Scratch/supervised/linear_regression/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="experimentation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Overview - ML Engineer From Scratch</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linear-regression-theory-and-derivation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ML Engineer From Scratch" class="md-header__button md-logo" aria-label="ML Engineer From Scratch" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ML Engineer From Scratch
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ML Engineer From Scratch" class="md-nav__button md-logo" aria-label="ML Engineer From Scratch" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ML Engineer From Scratch
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supervised Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Supervised Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Regression
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linear Regression
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypothesis-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hypothesis Function
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hypothesis Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-vectorized-form-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important: Vectorized Form Convention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loss-function-cost-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loss Function (Cost Function)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loss Function (Cost Function)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mathematical Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanded-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expanded Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-mse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why MSE?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Gradient Descent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Gradient Descent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weight-update-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weight Update Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-derivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradient Derivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-update-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Update Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vectorized-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vectorized Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disadvantages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stochastic-gradient-descent-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stochastic Gradient Descent (SGD)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stochastic Gradient Descent (SGD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weight-update-rule_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weight Update Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-differences-from-batch-gd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Differences from Batch GD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-batch-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini-Batch Gradient Descent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of SGD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages-of-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disadvantages of SGD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closed-form-solution-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closed-Form Solution (Normal Equation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Closed-Form Solution (Normal Equation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-normal-equation-vs-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Normal Equation vs Gradient Descent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-invertibility-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Invertibility Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-with-sample-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example with Sample Dataset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example with Sample Dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset-house-prices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset: House Prices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-hypothesis-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Hypothesis Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-setup-for-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Setup for Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-compute-xt-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Compute \(X^T X\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-compute-xt-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Compute \(X^T y\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-solve-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Solve Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-final-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Final Hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-make-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Make Predictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="experimentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypothesis-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hypothesis Function
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hypothesis Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-vectorized-form-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important: Vectorized Form Convention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loss-function-cost-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loss Function (Cost Function)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loss Function (Cost Function)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mathematical Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanded-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expanded Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-mse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why MSE?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Gradient Descent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Gradient Descent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weight-update-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weight Update Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-derivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradient Derivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-update-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Update Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vectorized-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vectorized Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disadvantages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stochastic-gradient-descent-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stochastic Gradient Descent (SGD)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stochastic Gradient Descent (SGD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weight-update-rule_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weight Update Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-differences-from-batch-gd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Differences from Batch GD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-batch-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini-Batch Gradient Descent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of SGD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages-of-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disadvantages of SGD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closed-form-solution-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closed-Form Solution (Normal Equation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Closed-Form Solution (Normal Equation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theory_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-normal-equation-vs-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Normal Equation vs Gradient Descent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-invertibility-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Invertibility Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-with-sample-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example with Sample Dataset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example with Sample Dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset-house-prices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset: House Prices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-hypothesis-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Hypothesis Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-setup-for-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Setup for Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-compute-xt-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Compute \(X^T X\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-compute-xt-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Compute \(X^T y\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-solve-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Solve Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-final-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Final Hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-make-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Make Predictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="linear-regression-theory-and-derivation">Linear Regression: Theory and Derivation</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#hypothesis-function">Hypothesis Function</a></li>
+<li><a href="#loss-function-cost-function">Loss Function (Cost Function)</a></li>
+<li><a href="#batch-gradient-descent">Batch Gradient Descent</a></li>
+<li><a href="#stochastic-gradient-descent-sgd">Stochastic Gradient Descent (SGD)</a></li>
+<li><a href="#closed-form-solution-normal-equation">Closed-Form Solution (Normal Equation)</a></li>
+<li><a href="#example-with-sample-dataset">Example with Sample Dataset</a></li>
+</ol>
+<hr />
+<h2 id="hypothesis-function">Hypothesis Function</h2>
+<h3 id="theory">Theory</h3>
+<p>Linear regression assumes a <strong>linear relationship</strong> between input features and the output. The hypothesis function models this relationship as a linear combination of input features. Idea is that output can be expressed as a linear combination of input features -&gt; y =mx + b as in case of a straight line for example.</p>
+<p>For a single feature (univariate linear regression):
+$<span class="arithmatex">\(h_\theta(x) = \theta_0 + \theta_1 x\)</span>$</p>
+<p>For multiple features (multivariate linear regression):
+$<span class="arithmatex">\(h_\theta(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_n x_n\)</span>$</p>
+<p>In vectorized form:
+$<span class="arithmatex">\(h_\theta(x) = \theta^T x\)</span>$</p>
+<p>Where:
+- <span class="arithmatex">\(h_\theta(x)\)</span> is the predicted output
+- <span class="arithmatex">\(\theta = [\theta_0, \theta_1, ..., \theta_n]^T\)</span> is the parameter vector (weights)
+- <span class="arithmatex">\(x = [x_0, x_1, ..., x_n]^T\)</span> is the feature vector (with <span class="arithmatex">\(x_0 = 1\)</span> for the bias term)
+- <span class="arithmatex">\(\theta_0\)</span> is the <strong>bias</strong> (intercept)
+- <span class="arithmatex">\(\theta_1, ..., \theta_n\)</span> are the <strong>weights</strong> for each feature</p>
+<h3 id="important-vectorized-form-convention">Important: Vectorized Form Convention</h3>
+<p>Vectorized form is important to understand intuitively. 
+<strong>Matrix Dimensions:</strong>
+- Input matrix <span class="arithmatex">\(X\)</span> has shape <span class="arithmatex">\((m \times n)\)</span> where:
+  - <span class="arithmatex">\(m\)</span> = number of training examples (datapoints) - <strong>rows</strong>
+  - <span class="arithmatex">\(n\)</span> = number of features - <strong>columns</strong>
+- Weight vector <span class="arithmatex">\(\theta\)</span> has shape <span class="arithmatex">\((n \times 1)\)</span> (or <span class="arithmatex">\((n+1) \times 1\)</span> with bias)
+- Output vector <span class="arithmatex">\(y\)</span> has shape <span class="arithmatex">\((m \times 1)\)</span></p>
+<p><strong>For all <span class="arithmatex">\(m\)</span> training examples simultaneously:</strong>
+$<span class="arithmatex">\(\hat{y} = X\theta\)</span>$</p>
+<p>Where:
+$<span class="arithmatex">\(X = \begin{bmatrix} 
+x_1^{(1)} &amp; x_2^{(1)} &amp; \cdots &amp; x_n^{(1)} \\
+x_1^{(2)} &amp; x_2^{(2)} &amp; \cdots &amp; x_n^{(2)} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+x_1^{(m)} &amp; x_2^{(m)} &amp; \cdots &amp; x_n^{(m)}
+\end{bmatrix}_{m \times n}, \quad
+\theta = \begin{bmatrix} 
+\theta_1 \\
+\theta_2 \\
+\vdots \\
+\theta_n
+\end{bmatrix}_{n \times 1}, \quad
+\hat{y} = \begin{bmatrix} 
+\hat{y}^{(1)} \\
+\hat{y}^{(2)} \\
+\vdots \\
+\hat{y}^{(m)}
+\end{bmatrix}_{m \times 1}\)</span>$</p>
+<p><strong>With bias term included:</strong>
+$<span class="arithmatex">\(X = \begin{bmatrix} 
+1 &amp; x_1^{(1)} &amp; x_2^{(1)} &amp; \cdots &amp; x_n^{(1)} \\
+1 &amp; x_1^{(2)} &amp; x_2^{(2)} &amp; \cdots &amp; x_n^{(2)} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; x_1^{(m)} &amp; x_2^{(m)} &amp; \cdots &amp; x_n^{(m)}
+\end{bmatrix}_{m \times (n+1)}, \quad
+\theta = \begin{bmatrix} 
+\theta_0 \\
+\theta_1 \\
+\vdots \\
+\theta_n
+\end{bmatrix}_{(n+1) \times 1}\)</span>$</p>
+<p>This convention (rows = datapoints, columns = features) is standard in machine learning and matches the implementation in <code>linear_regression_implementation.py</code>.</p>
+<h3 id="interpretation">Interpretation</h3>
+<ul>
+<li>The hypothesis function represents a <strong>hyperplane</strong> in the feature space</li>
+<li>For 2D (one feature), it's a line: <span class="arithmatex">\(y = mx + b\)</span></li>
+<li>For 3D (two features), it's a plane</li>
+<li>For higher dimensions, it's a hyperplane</li>
+</ul>
+<hr />
+<h2 id="loss-function-cost-function">Loss Function (Cost Function)</h2>
+<h3 id="theory_1">Theory</h3>
+<p>The <strong>loss function</strong> quantifies how well our model fits the training data. For linear regression, we use the <strong>Mean Squared Error (MSE)</strong> or <strong>Sum of Squared Errors (SSE)</strong>. There is also other loss functions such as <strong>Mean Absolute Error (MAE)</strong> which can be used for certain type of datasets, but for now we will concentrate on MSE alone in this.</p>
+<h3 id="mathematical-definition">Mathematical Definition</h3>
+<p>For a single training example:
+$<span class="arithmatex">\(L(\theta) = \frac{1}{2}(h_\theta(x^{(i)}) - y^{(i)})^2\)</span>$</p>
+<p>For the entire training set (Cost Function):
+$<span class="arithmatex">\(J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2\)</span>$</p>
+<p>Where:
+- <span class="arithmatex">\(m\)</span> is the number of training examples
+- <span class="arithmatex">\(x^{(i)}\)</span> is the <span class="arithmatex">\(i\)</span>-th training input
+- <span class="arithmatex">\(y^{(i)}\)</span> is the <span class="arithmatex">\(i\)</span>-th actual output
+- The factor <span class="arithmatex">\(\frac{1}{2}\)</span> is for mathematical convenience (simplifies derivatives)</p>
+<h3 id="expanded-form">Expanded Form</h3>
+<div class="arithmatex">\[J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (\theta^T x^{(i)} - y^{(i)})^2\]</div>
+<h3 id="why-mse">Why MSE?</h3>
+<ul>
+<li><strong>Convex function</strong>: Guarantees a global minimum. MSE is square of linear functions hence it is convex since this is bowl shaped functions.</li>
+<li><strong>Differentiable</strong>: Allows gradient-based optimization. </li>
+<li><strong>Penalizes large errors</strong>: Squaring amplifies large deviations. Need to be careful with outliers though.</li>
+<li><strong>Statistically motivated</strong>: Related to Maximum Likelihood Estimation under Gaussian noise assumption. </li>
+</ul>
+<hr />
+<h2 id="batch-gradient-descent">Batch Gradient Descent</h2>
+<h3 id="theory_2">Theory</h3>
+<p><strong>Gradient Descent</strong> is an iterative optimization algorithm that finds the minimum of the cost function by moving in the direction of steepest descent (negative gradient). Gradients specify the direction in which there is steepest slope. So by moving in the negative direction of it, we will reach the deepest point optimally.</p>
+<p><strong>Batch Gradient Descent</strong> uses the <strong>entire training dataset</strong> in each iteration to compute the gradient.</p>
+<h3 id="algorithm-steps">Algorithm Steps</h3>
+<ol>
+<li>Initialize parameters <span class="arithmatex">\(\theta\)</span> (usually with zeros or small random values)</li>
+<li>Repeat until convergence:</li>
+<li>Compute the gradient of <span class="arithmatex">\(J(\theta)\)</span> with respect to each parameter</li>
+<li>Update parameters in the opposite direction of the gradient</li>
+</ol>
+<h3 id="weight-update-rule">Weight Update Rule</h3>
+<div class="arithmatex">\[\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta)\]</div>
+<p>Where:
+- <span class="arithmatex">\(\alpha\)</span> is the <strong>learning rate</strong> (step size)
+- <span class="arithmatex">\(:=\)</span> denotes assignment
+- The update is performed <strong>simultaneously</strong> for all <span class="arithmatex">\(j\)</span></p>
+<h3 id="gradient-derivation">Gradient Derivation</h3>
+<p>Starting with the cost function:
+$<span class="arithmatex">\(J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2\)</span>$</p>
+<p>Taking the partial derivative with respect to <span class="arithmatex">\(\theta_j\)</span>:</p>
+<div class="arithmatex">\[\frac{\partial}{\partial \theta_j} J(\theta) = \frac{\partial}{\partial \theta_j} \left[ \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 \right]\]</div>
+<p>Using the chain rule:
+$<span class="arithmatex">\(\frac{\partial}{\partial \theta_j} J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)}\)</span>$</p>
+<h3 id="final-update-rule">Final Update Rule</h3>
+<div class="arithmatex">\[\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)}\]</div>
+<h3 id="vectorized-form">Vectorized Form</h3>
+<div class="arithmatex">\[\theta := \theta - \frac{\alpha}{m} X^T (X\theta - y)\]</div>
+<p>Where:
+- <span class="arithmatex">\(X\)</span> is the <span class="arithmatex">\(m \times (n+1)\)</span> design matrix
+- <span class="arithmatex">\(y\)</span> is the <span class="arithmatex">\(m \times 1\)</span> output vector</p>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>Guaranteed to converge to global minimum (for convex functions)</li>
+<li>Stable convergence</li>
+</ul>
+<h3 id="disadvantages">Disadvantages</h3>
+<ul>
+<li>Slow for large datasets (computes gradient over all examples)</li>
+<li>Memory intensive</li>
+</ul>
+<hr />
+<h2 id="stochastic-gradient-descent-sgd">Stochastic Gradient Descent (SGD)</h2>
+<h3 id="theory_3">Theory</h3>
+<p><strong>Stochastic Gradient Descent</strong> updates parameters using <strong>one training example at a time</strong>, making it much faster for large datasets.</p>
+<h3 id="algorithm-steps_1">Algorithm Steps</h3>
+<ol>
+<li>Initialize parameters <span class="arithmatex">\(\theta\)</span></li>
+<li>Repeat:</li>
+<li>Shuffle the training dataset</li>
+<li>For each training example <span class="arithmatex">\((x^{(i)}, y^{(i)})\)</span>:<ul>
+<li>Compute the gradient using only this example</li>
+<li>Update parameters immediately</li>
+</ul>
+</li>
+</ol>
+<h3 id="weight-update-rule_1">Weight Update Rule</h3>
+<div class="arithmatex">\[\theta_j := \theta_j - \alpha (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)}\]</div>
+<h3 id="key-differences-from-batch-gd">Key Differences from Batch GD</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Batch Gradient Descent</th>
+<th>Stochastic Gradient Descent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Update frequency</strong></td>
+<td>Once per epoch (full pass)</td>
+<td>Once per training example</td>
+</tr>
+<tr>
+<td><strong>Gradient computation</strong></td>
+<td><span class="arithmatex">\(\frac{1}{m} \sum_{i=1}^{m} ...\)</span></td>
+<td>Single example <span class="arithmatex">\((x^{(i)}, y^{(i)})\)</span></td>
+</tr>
+<tr>
+<td><strong>Convergence</strong></td>
+<td>Smooth, direct path</td>
+<td>Noisy, fluctuating path</td>
+</tr>
+<tr>
+<td><strong>Speed</strong></td>
+<td>Slower for large datasets</td>
+<td>Much faster</td>
+</tr>
+<tr>
+<td><strong>Memory</strong></td>
+<td>Requires full dataset</td>
+<td>Processes one example at a time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mini-batch-gradient-descent">Mini-Batch Gradient Descent</h3>
+<p>A compromise between Batch GD and SGD:
+- Uses a <strong>small batch</strong> of examples (e.g., 32, 64, 128) for each update
+- Balances computation efficiency and convergence stability</p>
+<div class="arithmatex">\[\theta_j := \theta_j - \alpha \frac{1}{b} \sum_{k=1}^{b} (h_\theta(x^{(k)}) - y^{(k)}) \cdot x_j^{(k)}\]</div>
+<p>Where <span class="arithmatex">\(b\)</span> is the batch size.</p>
+<h3 id="advantages-of-sgd">Advantages of SGD</h3>
+<ul>
+<li>Much faster for large datasets</li>
+<li>Can escape shallow local minima (due to noise)</li>
+<li>Enables online learning (update as new data arrives)</li>
+</ul>
+<h3 id="disadvantages-of-sgd">Disadvantages of SGD</h3>
+<ul>
+<li>Noisy convergence (fluctuates around minimum)</li>
+<li>May not converge exactly to minimum</li>
+<li>Requires careful learning rate tuning</li>
+</ul>
+<hr />
+<h2 id="closed-form-solution-normal-equation">Closed-Form Solution (Normal Equation)</h2>
+<h3 id="theory_4">Theory</h3>
+<p>Instead of iterative optimization, we can solve for <span class="arithmatex">\(\theta\)</span> <strong>analytically</strong> by setting the gradient to zero and solving directly.</p>
+<h3 id="derivation">Derivation</h3>
+<p>Starting with the cost function in matrix form:
+$<span class="arithmatex">\(J(\theta) = \frac{1}{2m} (X\theta - y)^T (X\theta - y)\)</span>$</p>
+<p>Expanding:
+$<span class="arithmatex">\(J(\theta) = \frac{1}{2m} (\theta^T X^T X \theta - 2\theta^T X^T y + y^T y)\)</span>$</p>
+<p>Taking the gradient with respect to <span class="arithmatex">\(\theta\)</span>:
+$<span class="arithmatex">\(\nabla_\theta J(\theta) = \frac{1}{m} (X^T X \theta - X^T y)\)</span>$</p>
+<p>Setting the gradient to zero (for minimum):
+$<span class="arithmatex">\(X^T X \theta - X^T y = 0\)</span>$</p>
+<p>Solving for <span class="arithmatex">\(\theta\)</span>:
+$<span class="arithmatex">\(X^T X \theta = X^T y\)</span>$</p>
+<h3 id="normal-equation">Normal Equation</h3>
+<div class="arithmatex">\[\theta = (X^T X)^{-1} X^T y\]</div>
+<p>Where:
+- <span class="arithmatex">\(X\)</span> is the <span class="arithmatex">\(m \times (n+1)\)</span> design matrix (includes bias column of 1's)
+- <span class="arithmatex">\(y\)</span> is the <span class="arithmatex">\(m \times 1\)</span> output vector
+- <span class="arithmatex">\((X^T X)^{-1}\)</span> is the inverse of <span class="arithmatex">\(X^T X\)</span> (must be invertible)</p>
+<h3 id="when-to-use-normal-equation-vs-gradient-descent">When to Use Normal Equation vs Gradient Descent</h3>
+<table>
+<thead>
+<tr>
+<th>Gradient Descent</th>
+<th>Normal Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Need to choose <span class="arithmatex">\(\alpha\)</span></td>
+<td>No learning rate needed</td>
+</tr>
+<tr>
+<td>Needs many iterations</td>
+<td>Computes <span class="arithmatex">\(\theta\)</span> directly</td>
+</tr>
+<tr>
+<td>Works well for large <span class="arithmatex">\(n\)</span></td>
+<td>Slow if <span class="arithmatex">\(n\)</span> is very large</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(O(kn^2)\)</span> complexity</td>
+<td><span class="arithmatex">\(O(n^3)\)</span> complexity (matrix inversion)</td>
+</tr>
+<tr>
+<td>Works with large datasets</td>
+<td>Requires <span class="arithmatex">\(X^T X\)</span> to be invertible</td>
+</tr>
+</tbody>
+</table>
+<h3 id="practical-considerations">Practical Considerations</h3>
+<ul>
+<li>Use <strong>Normal Equation</strong> when:</li>
+<li><span class="arithmatex">\(n\)</span> (number of features) is small (<span class="arithmatex">\(n \leq 10,000\)</span>)</li>
+<li>You need exact solution</li>
+<li>
+<p>No need for iterative tuning</p>
+</li>
+<li>
+<p>Use <strong>Gradient Descent</strong> when:</p>
+</li>
+<li><span class="arithmatex">\(n\)</span> is very large (<span class="arithmatex">\(n &gt; 10,000\)</span>)</li>
+<li>Online learning is required</li>
+<li><span class="arithmatex">\(X^T X\)</span> is not invertible (singular matrix)</li>
+</ul>
+<h3 id="non-invertibility-solutions">Non-Invertibility Solutions</h3>
+<p>If <span class="arithmatex">\(X^T X\)</span> is singular (non-invertible):
+1. <strong>Remove redundant features</strong> (linear dependencies)
+2. <strong>Use regularization</strong> (Ridge Regression): <span class="arithmatex">\(\theta = (X^T X + \lambda I)^{-1} X^T y\)</span>
+3. <strong>Use pseudo-inverse</strong>: <span class="arithmatex">\(\theta = X^{\dagger} y\)</span> where <span class="arithmatex">\(X^{\dagger} = (X^T X)^{-1} X^T\)</span></p>
+<hr />
+<h2 id="example-with-sample-dataset">Example with Sample Dataset</h2>
+<h3 id="dataset-house-prices">Dataset: House Prices</h3>
+<p>We'll predict house prices based on size (in square feet).</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Size (<span class="arithmatex">\(x\)</span>) sq ft</th>
+<th>Price (<span class="arithmatex">\(y\)</span>) $1000s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>500</td>
+<td>150</td>
+</tr>
+<tr>
+<td>2</td>
+<td>800</td>
+<td>200</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1000</td>
+<td>250</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1200</td>
+<td>280</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1500</td>
+<td>320</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1800</td>
+<td>380</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2000</td>
+<td>420</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2200</td>
+<td>450</td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-1-hypothesis-function">Step 1: Hypothesis Function</h3>
+<p>We want to find: <span class="arithmatex">\(h_\theta(x) = \theta_0 + \theta_1 x\)</span></p>
+<h3 id="step-2-setup-for-normal-equation">Step 2: Setup for Normal Equation</h3>
+<p>Design matrix <span class="arithmatex">\(X\)</span> (with bias column):
+$<span class="arithmatex">\(X = \begin{bmatrix} 
+1 &amp; 500 \\ 
+1 &amp; 800 \\ 
+1 &amp; 1000 \\ 
+1 &amp; 1200 \\ 
+1 &amp; 1500 \\ 
+1 &amp; 1800 \\ 
+1 &amp; 2000 \\ 
+1 &amp; 2200 
+\end{bmatrix}, \quad
+y = \begin{bmatrix} 
+150 \\ 
+200 \\ 
+250 \\ 
+280 \\ 
+320 \\ 
+380 \\ 
+420 \\ 
+450 
+\end{bmatrix}\)</span>$</p>
+<h3 id="step-3-compute-xt-x">Step 3: Compute <span class="arithmatex">\(X^T X\)</span></h3>
+<div class="arithmatex">\[X^T = \begin{bmatrix} 
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 
+500 &amp; 800 &amp; 1000 &amp; 1200 &amp; 1500 &amp; 1800 &amp; 2000 &amp; 2200 
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[X^T X = \begin{bmatrix} 
+8 &amp; 11000 \\ 
+11000 &amp; 17140000 
+\end{bmatrix}\]</div>
+<h3 id="step-4-compute-xt-y">Step 4: Compute <span class="arithmatex">\(X^T y\)</span></h3>
+<div class="arithmatex">\[X^T y = \begin{bmatrix} 
+2450 \\ 
+3665000 
+\end{bmatrix}\]</div>
+<h3 id="step-5-solve-normal-equation">Step 5: Solve Normal Equation</h3>
+<div class="arithmatex">\[(X^T X)^{-1} = \frac{1}{8 \times 17140000 - 11000^2} \begin{bmatrix} 
+17140000 &amp; -11000 \\ 
+-11000 &amp; 8 
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[= \frac{1}{16120000} \begin{bmatrix} 
+17140000 &amp; -11000 \\ 
+-11000 &amp; 8 
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[\theta = (X^T X)^{-1} X^T y = \begin{bmatrix} 
+\theta_0 \\ 
+\theta_1 
+\end{bmatrix} \approx \begin{bmatrix} 
+93.24 \\ 
+0.162 
+\end{bmatrix}\]</div>
+<h3 id="step-6-final-hypothesis">Step 6: Final Hypothesis</h3>
+<div class="arithmatex">\[h_\theta(x) \approx 93.24 + 0.162x\]</div>
+<p><strong>Interpretation</strong>: 
+- Base price: ~<span class="arithmatex">\(93,240
+- Each additional square foot adds ~\)</span>162 to the price</p>
+<h3 id="step-7-make-predictions">Step 7: Make Predictions</h3>
+<p>For a 1600 sq ft house:
+$<span class="arithmatex">\(h_\theta(1600) = 93.24 + 0.162 \times 1600 = 93.24 + 259.2 = 352.44\)</span>$</p>
+<p><strong>Predicted price</strong>: $352,440</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
