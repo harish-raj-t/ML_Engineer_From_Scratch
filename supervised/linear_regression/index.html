@@ -350,6 +350,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#key-points-to-remember-when-it-comes-to-linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points to Remember when it comes to Linear Regression
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -881,7 +892,7 @@
   <span class="md-ellipsis">
     
   
-    Notebook
+    Linear Regression - Interactive Experiment
   
 
     
@@ -935,6 +946,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-points-to-remember-when-it-comes-to-linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Points to Remember when it comes to Linear Regression
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#table-of-contents" class="md-nav__link">
@@ -1463,12 +1485,20 @@
 
 
 <h1 id="linear-regression-theory-and-derivation">Linear Regression: Theory and Derivation</h1>
-<p>When it comes to Linear Regression just remember these points.
--&gt; Hypothesis which is $<span class="arithmatex">\(h_\theta(x) = \theta^T x\)</span>$
--&gt; Its a Linear function hence convex and also possible to use closed form equation to solve the parameters.
--&gt; Cost function is MSE which is the standard or sometimes MAE
--&gt; Gradients dw = 1/m * Σ(X.T * error), db = 1/m * Σ(error)
--&gt; Just try to understand Vectorized form of hypothesis, Gradients and Gradient updates.</p>
+<h2 id="key-points-to-remember-when-it-comes-to-linear-regression">Key Points to Remember when it comes to Linear Regression</h2>
+<ul>
+<li><strong>Hypothesis</strong>: $<span class="arithmatex">\(h_\theta(x) = \theta^T x\)</span>$</li>
+<li><strong>Linear function</strong>: Lin Regression is a Convex function, so closed-form equation can solve the parameters</li>
+<li><strong>Cost function</strong>: MSE (Mean Squared Error) is the standard, but sometimes MAE (Mean Absolute Error) can also be used.</li>
+<li><strong>Gradients</strong>: </li>
+<li>
+<div class="arithmatex">\[dw = \frac{1}{m} \sum X^T \cdot \text{error}\]</div>
+</li>
+<li>
+<div class="arithmatex">\[db = \frac{1}{m} \sum \text{error}\]</div>
+</li>
+<li><strong>Focus</strong>: As a beginner, try to understand vectorized form of hypothesis, cost fn, gradients, and gradient updates</li>
+</ul>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#hypothesis-function">Hypothesis Function</a></li>
@@ -1495,7 +1525,7 @@ $<span class="arithmatex">\(h_\theta(x) = \theta^T x\)</span>$</p>
 - <span class="arithmatex">\(\theta_0\)</span> is the <strong>bias</strong> (intercept)
 - <span class="arithmatex">\(\theta_1, ..., \theta_n\)</span> are the <strong>weights</strong> for each feature</p>
 <h3 id="important-vectorized-form-convention">Important: Vectorized Form Convention</h3>
-<p>Vectorized form is important to understand intuitively. 
+<p>Vectorized form is important to understand intuitively. Rows are datapoints while columns are feature vectors.
 <strong>Matrix Dimensions:</strong>
 - Input matrix <span class="arithmatex">\(X\)</span> has shape <span class="arithmatex">\((m \times n)\)</span> where:
   - <span class="arithmatex">\(m\)</span> = number of training examples (datapoints) - <strong>rows</strong>
@@ -1536,7 +1566,7 @@ $<span class="arithmatex">\(X = \begin{bmatrix}
 \vdots \\
 \theta_n
 \end{bmatrix}_{(n+1) \times 1}\)</span>$</p>
-<p>This convention (rows = datapoints, columns = features) is standard in machine learning and matches the implementation in <code>linear_regression_implementation.py</code>.</p>
+<p>This convention (rows = datapoints, columns = features) is standard in machine learning and matches the implementation in the <code>notebook</code>.</p>
 <h3 id="interpretation">Interpretation</h3>
 <ul>
 <li>The hypothesis function represents a <strong>hyperplane</strong> in the feature space</li>
@@ -1547,12 +1577,14 @@ $<span class="arithmatex">\(X = \begin{bmatrix}
 <hr />
 <h2 id="loss-function-cost-function">Loss Function (Cost Function)</h2>
 <h3 id="theory_1">Theory</h3>
-<p>The <strong>loss function</strong> quantifies how well our model fits the training data. For linear regression, we use the <strong>Mean Squared Error (MSE)</strong> or <strong>Sum of Squared Errors (SSE)</strong>. There is also other loss functions such as <strong>Mean Absolute Error (MAE)</strong> which can be used for certain type of datasets, but for now we will concentrate on MSE alone in this.</p>
+<p>The <strong>loss function</strong> quantifies how well our model fits the training data. For linear regression, we use the <strong>Mean Squared Error (MSE)</strong> or <strong>Sum of Squared Errors (SSE)</strong>. For interpretability, it is good to calculate RMSE since the difference maybe more intuitive to understand from human's POV. There are also other loss functions such as <strong>Mean Absolute Error (MAE)</strong> which can be used for certain type of datasets, but for now we will concentrate on MSE alone in this.</p>
 <h3 id="mathematical-definition">Mathematical Definition</h3>
-<p>For a single training example:
-$<span class="arithmatex">\(L(\theta) = \frac{1}{2}(h_\theta(x^{(i)}) - y^{(i)})^2\)</span>$</p>
-<p>For the entire training set (Cost Function):
-$<span class="arithmatex">\(J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2\)</span>$</p>
+<p>For a single training example:</p>
+<div class="arithmatex">\[L(\theta) = \frac{1}{2}(h_\theta(x^{(i)}) - y^{(i)})^2\]</div>
+<p>This is just the difference between actual output and the predicted output, squared.</p>
+<p>For the entire training set (Cost Function):</p>
+<div class="arithmatex">\[J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2\]</div>
+<p>Same as above but we aggregate all the errors across all training examples.</p>
 <p>Where:
 - <span class="arithmatex">\(m\)</span> is the number of training examples
 - <span class="arithmatex">\(x^{(i)}\)</span> is the <span class="arithmatex">\(i\)</span>-th training input
@@ -1560,6 +1592,7 @@ $<span class="arithmatex">\(J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^
 - The factor <span class="arithmatex">\(\frac{1}{2}\)</span> is for mathematical convenience (simplifies derivatives)</p>
 <h3 id="expanded-form">Expanded Form</h3>
 <div class="arithmatex">\[J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (\theta^T x^{(i)} - y^{(i)})^2\]</div>
+<p>Note via Vectorization, we can write this without summing function.</p>
 <h3 id="why-mse">Why MSE?</h3>
 <ul>
 <li><strong>Convex function</strong>: Guarantees a global minimum. MSE is square of linear functions hence it is convex since this is bowl shaped functions.</li>
@@ -1571,10 +1604,11 @@ $<span class="arithmatex">\(J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^
 <h2 id="batch-gradient-descent">Batch Gradient Descent</h2>
 <h3 id="theory_2">Theory</h3>
 <p><strong>Gradient Descent</strong> is an iterative optimization algorithm that finds the minimum of the cost function by moving in the direction of steepest descent (negative gradient). Gradients specify the direction in which there is steepest slope. So by moving in the negative direction of it, we will reach the deepest point optimally.</p>
+<p>For example: if the function is <span class="arithmatex">\(y = x^2\)</span>, then the gradient with respect to <span class="arithmatex">\(x\)</span> is <span class="arithmatex">\(\frac{dy}{dx} = 2x\)</span>. So at point <span class="arithmatex">\(x = 3\)</span>, the gradient is <span class="arithmatex">\(6\)</span>, indicating the slope at that point.</p>
 <p><strong>Batch Gradient Descent</strong> uses the <strong>entire training dataset</strong> in each iteration to compute the gradient.</p>
 <h3 id="algorithm-steps">Algorithm Steps</h3>
 <ol>
-<li>Initialize parameters <span class="arithmatex">\(\theta\)</span> (usually with zeros or small random values)</li>
+<li>Initialize parameters <span class="arithmatex">\(\theta\)</span> (usually with zeros or small random values). Usually we shouldn't do zeros for other ML models or deep learning models, but here it's fine. </li>
 <li>Repeat until convergence:</li>
 <li>Compute the gradient of <span class="arithmatex">\(J(\theta)\)</span> with respect to each parameter</li>
 <li>Update parameters in the opposite direction of the gradient</li>
@@ -1594,6 +1628,7 @@ $<span class="arithmatex">\(J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^
 $<span class="arithmatex">\(\frac{\partial}{\partial \theta_j} J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)}\)</span>$</p>
 <h3 id="final-update-rule">Final Update Rule</h3>
 <div class="arithmatex">\[\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)}\]</div>
+<p><strong>Intuitive Understanding</strong>: Looking at this equation, we're essentially finding how much the error correlates with the input feature vector via dot product to determine the optimal weights.</p>
 <h3 id="vectorized-form">Vectorized Form</h3>
 <div class="arithmatex">\[\theta := \theta - \frac{\alpha}{m} X^T (X\theta - y)\]</div>
 <p>Where:
@@ -1606,13 +1641,13 @@ $<span class="arithmatex">\(\frac{\partial}{\partial \theta_j} J(\theta) = \frac
 </ul>
 <h3 id="disadvantages">Disadvantages</h3>
 <ul>
-<li>Slow for large datasets (computes gradient over all examples)</li>
+<li>Slow for large datasets (computes gradient over all examples).</li>
 <li>Memory intensive</li>
 </ul>
 <hr />
 <h2 id="stochastic-gradient-descent-sgd">Stochastic Gradient Descent (SGD)</h2>
 <h3 id="theory_3">Theory</h3>
-<p><strong>Stochastic Gradient Descent</strong> updates parameters using <strong>one training example at a time</strong>, making it much faster for large datasets.</p>
+<p><strong>Stochastic Gradient Descent</strong> updates parameters using <strong>one training example at a time</strong>, making it much faster for large datasets. </p>
 <h3 id="algorithm-steps_1">Algorithm Steps</h3>
 <ol>
 <li>Initialize parameters <span class="arithmatex">\(\theta\)</span></li>
@@ -1663,6 +1698,7 @@ $<span class="arithmatex">\(\frac{\partial}{\partial \theta_j} J(\theta) = \frac
 </tr>
 </tbody>
 </table>
+<p>SGD isn't used in practice. </p>
 <h3 id="mini-batch-gradient-descent">Mini-Batch Gradient Descent</h3>
 <p>A compromise between Batch GD and SGD:
 - Uses a <strong>small batch</strong> of examples (e.g., 32, 64, 128) for each update
@@ -1733,6 +1769,7 @@ $<span class="arithmatex">\(X^T X \theta = X^T y\)</span>$</p>
 </tr>
 </tbody>
 </table>
+<p>This is how Linear regression algo is implemented in scikit learn.</p>
 <h3 id="practical-considerations">Practical Considerations</h3>
 <ul>
 <li>Use <strong>Normal Equation</strong> when:</li>
