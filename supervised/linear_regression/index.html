@@ -1463,6 +1463,12 @@
 
 
 <h1 id="linear-regression-theory-and-derivation">Linear Regression: Theory and Derivation</h1>
+<p>When it comes to Linear Regression just remember these points.
+-&gt; Hypothesis which is $<span class="arithmatex">\(h_\theta(x) = \theta^T x\)</span>$
+-&gt; Its a Linear function hence convex and also possible to use closed form equation to solve the parameters.
+-&gt; Cost function is MSE which is the standard or sometimes MAE
+-&gt; Gradients dw = 1/m * Σ(X.T * error), db = 1/m * Σ(error)
+-&gt; Just try to understand Vectorized form of hypothesis, Gradients and Gradient updates.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#hypothesis-function">Hypothesis Function</a></li>
@@ -1477,7 +1483,7 @@
 <h3 id="theory">Theory</h3>
 <p>Linear regression assumes a <strong>linear relationship</strong> between input features and the output. The hypothesis function models this relationship as a linear combination of input features. Idea is that output can be expressed as a linear combination of input features -&gt; y =mx + b as in case of a straight line for example.</p>
 <p>For a single feature (univariate linear regression):
-$<span class="arithmatex">\(h_\theta(x) = \theta_0 + \theta_1 x\)</span>$</p>
+<span class="arithmatex">\(h_\theta(x) = \theta_0 + \theta_1 x\)</span></p>
 <p>For multiple features (multivariate linear regression):
 $<span class="arithmatex">\(h_\theta(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + ... + \theta_n x_n\)</span>$</p>
 <p>In vectorized form:
