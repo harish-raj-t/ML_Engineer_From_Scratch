@@ -6,7 +6,7 @@
     <a href="https://colab.research.google.com/github/harish-raj-t/ML_Engineer_From_Scratch/blob/main/docs/{{ page.file.src_path }}" target="_blank">
       <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
     </a>
-    <a href="{{ page.file.src_path | replace('.ipynb', '/') | replace('/', '', 1) }}{{ page.file.name }}" download style="margin-left: 10px;">
+    <a href="{{ page.canonical_url | replace('/index.html', '') }}/{{ page.file.name }}" download style="margin-left: 10px;">
       <button style="background-color: #2196F3; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">
         📥 Download Notebook
       </button>
