@@ -787,12 +787,26 @@
     <a href="https://colab.research.google.com/github/harish-raj-t/ML_Engineer_From_Scratch/blob/main/docs/supervised/linear_regression/tutorial.ipynb" target="_blank">
       <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
     </a>
-    <a href="https://raw.githubusercontent.com/harish-raj-t/ML_Engineer_From_Scratch/main/docs/supervised/linear_regression/tutorial.ipynb" download="tutorial" style="margin-left: 10px;">
-      <button style="background-color: #2196F3; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">
-        📥 Download Notebook
-      </button>
-    </a>
+    <button onclick="downloadNotebook('https://raw.githubusercontent.com/harish-raj-t/ML_Engineer_From_Scratch/main/docs/supervised/linear_regression/tutorial.ipynb', 'tutorial')" style="background-color: #2196F3; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">
+      📥 Download Notebook
+    </button>
   </div>
+  <script>
+    function downloadNotebook(url, filename) {
+      fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(link.href);
+        })
+        .catch(error => console.error('Download failed:', error));
+    }
+  </script>
   
   
                   
