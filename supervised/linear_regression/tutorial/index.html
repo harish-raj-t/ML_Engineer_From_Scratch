@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://harish-tamilarasan.github.io/ML_Engineer_From_Scratch/supervised/linear_regression/experimentation/">
+        <link rel="canonical" href="https://harish-tamilarasan.github.io/ML_Engineer_From_Scratch/supervised/linear_regression/tutorial/">
       
       
-        <link rel="prev" href="../tutorial/">
+        <link rel="prev" href="../../..">
       
+      
+        <link rel="next" href="../experimentation/">
       
       
         
@@ -23,7 +25,7 @@
     
     
       
-        <title>Solution Reference - ML Engineer From Scratch</title>
+        <title>Linear Regression Tutorial: From Theory to Implementation - ML Engineer From Scratch</title>
       
     
     
@@ -63,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#linear-regression-tutorial-from-theory-to-implementation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Solution Reference
+              Linear Regression Tutorial: From Theory to Implementation
             
           </span>
         </div>
@@ -308,10 +315,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tutorial/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Regression Tutorial: From Theory to Implementation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -327,6 +361,392 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use This Notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-data-preparation-vectorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Data Preparation &amp; Vectorization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Data Preparation &amp; Vectorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-how-to-load-and-inspect-the-diabetes-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: How to load and inspect the diabetes dataset?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-how-to-organize-data-as-matrices-rows-vs-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: How to organize data as matrices? (Rows vs Columns)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-how-to-split-data-into-training-and-testing-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: How to split data into training and testing sets?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-batch-gradient-descent-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Batch Gradient Descent Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Batch Gradient Descent Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-4-how-to-initialize-weights-and-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: How to initialize weights and bias?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5-how-to-implement-the-forward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5: How to implement the forward pass?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6-how-to-compute-the-error-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6: How to compute the error vector?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7-how-to-compute-the-loss-cost-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7: How to compute the loss (cost function)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8-how-to-compute-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8: How to compute gradients?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9-how-to-update-weights-using-learning-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9: How to update weights using learning rate?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10-complete-the-predict-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10: Complete the predict method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-11-test-your-batch-gradient-descent-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 11: Test your Batch Gradient Descent implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-mini-batch-stochastic-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Mini-batch Stochastic Gradient Descent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Mini-batch Stochastic Gradient Descent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-12-why-shuffle-data-implement-shuffling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 12: Why shuffle data? Implement shuffling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-13-how-to-create-batches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 13: How to create batches?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-14-implement-mini-batch-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 14: Implement Mini-batch SGD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-15-test-mini-batch-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 15: Test Mini-batch SGD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-normal-equation-closed-form-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Normal Equation (Closed-form Solution)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Normal Equation (Closed-form Solution)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-16-understand-the-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 16: Understand the Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-17-test-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 17: Test Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-comparison-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Comparison &amp; Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Comparison &amp; Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-18-compare-with-sklearn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 18: Compare with sklearn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-19-calculate-and-compare-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 19: Calculate and compare metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-20-final-analysis-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 20: Final Analysis Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Congratulations! 🎉">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -336,17 +756,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../experimentation/" class="md-nav__link">
         
   
   
@@ -362,7 +775,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -456,6 +868,382 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use This Notebook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-data-preparation-vectorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Data Preparation &amp; Vectorization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Data Preparation &amp; Vectorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-how-to-load-and-inspect-the-diabetes-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: How to load and inspect the diabetes dataset?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-how-to-organize-data-as-matrices-rows-vs-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: How to organize data as matrices? (Rows vs Columns)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-how-to-split-data-into-training-and-testing-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: How to split data into training and testing sets?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-batch-gradient-descent-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Batch Gradient Descent Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Batch Gradient Descent Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-4-how-to-initialize-weights-and-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: How to initialize weights and bias?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5-how-to-implement-the-forward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5: How to implement the forward pass?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6-how-to-compute-the-error-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6: How to compute the error vector?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7-how-to-compute-the-loss-cost-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7: How to compute the loss (cost function)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8-how-to-compute-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8: How to compute gradients?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9-how-to-update-weights-using-learning-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9: How to update weights using learning rate?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10-complete-the-predict-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10: Complete the predict method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-11-test-your-batch-gradient-descent-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 11: Test your Batch Gradient Descent implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-mini-batch-stochastic-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Mini-batch Stochastic Gradient Descent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Mini-batch Stochastic Gradient Descent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-12-why-shuffle-data-implement-shuffling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 12: Why shuffle data? Implement shuffling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-13-how-to-create-batches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 13: How to create batches?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-14-implement-mini-batch-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 14: Implement Mini-batch SGD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-15-test-mini-batch-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 15: Test Mini-batch SGD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-normal-equation-closed-form-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Normal Equation (Closed-form Solution)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Normal Equation (Closed-form Solution)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-16-understand-the-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 16: Understand the Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-17-test-normal-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 17: Test Normal Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-comparison-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Comparison &amp; Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Comparison &amp; Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-18-compare-with-sklearn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 18: Compare with sklearn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-19-calculate-and-compare-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 19: Calculate and compare metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-20-final-analysis-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 20: Final Analysis Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Congratulations! 🎉">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -471,8 +1259,6 @@
                   
 
 
-
-  <h1>Solution Reference</h1>
 
 <script>
 (function (global, factory) {
@@ -910,13 +1696,74 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="linear-regression-tutorial-from-theory-to-implementation">Linear Regression Tutorial: From Theory to Implementation<a class="anchor-link" href="#linear-regression-tutorial-from-theory-to-implementation">¶</a></h1><p>Welcome to this hands-on tutorial on Linear Regression! This notebook will help you through implementing three different approaches to Linear Regression from scratch:</p>
+<ol>
+<li><strong>Batch Gradient Descent (BGD)</strong></li>
+<li><strong>Mini-batch Stochastic Gradient Descent (Mini-batch SGD)</strong></li>
+<li><strong>Normal Equation (Closed-form solution)</strong></li>
+</ol>
+<h2 id="learning-objectives">Learning Objectives<a class="anchor-link" href="#learning-objectives">¶</a></h2><p>By the end of this tutorial, you will:</p>
+<ul>
+<li>Understand how to vectorize data for machine learning</li>
+<li>Implement forward pass, loss computation, and gradient descent</li>
+<li>Understand the differences between optimization methods</li>
+<li>Compare your implementations with scikit-learn</li>
+</ul>
+<h2 id="how-to-use-this-notebook">How to Use This Notebook<a class="anchor-link" href="#how-to-use-this-notebook">¶</a></h2><p>Each section contains:</p>
+<ul>
+<li><strong>Questions</strong> that challenge you to think and implement</li>
+<li><strong>Starter code</strong> with TODO comments</li>
+<li><strong>Hints</strong> (expandable sections) to guide you</li>
+<li><strong>Solutions</strong> (expandable sections) for reference</li>
+</ul>
+<p>Try to solve each question before looking at hints or solutions!</p>
+<hr/>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="part-1-data-preparation-vectorization">Part 1: Data Preparation &amp; Vectorization<a class="anchor-link" href="#part-1-data-preparation-vectorization">¶</a></h2><p>Understanding how data is organized is crucial for implementing machine learning algorithms efficiently.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-1-how-to-load-and-inspect-the-diabetes-dataset">Question 1: How to load and inspect the diabetes dataset?<a class="anchor-link" href="#question-1-how-to-load-and-inspect-the-diabetes-dataset">¶</a></h3><p><strong>Challenge</strong>: Load the diabetes dataset from sklearn and understand its structure.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>What information does the dataset contain?</li>
+<li>How many features and samples are there?</li>
+<li>What are we trying to predict?</li>
+<li>What will be the rows and what will be the columns.</li>
+</ul>
+<p><strong>Expected output</strong>: Display basic information about the dataset</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5234d943-9e88-4d83-9e29-d1216b534865">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
@@ -929,41 +1776,107 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># @forward pass</span>
-<span class="c1"># loss fn</span>
-<span class="c1"># gradients</span>
-<span class="c1"># updating gradients</span>
-<span class="c1"># y^ = X.W + b</span>
-<span class="c1"># error = y^- y</span>
-<span class="c1"># J = (1/2m) * Σ(error**2)</span>
-<span class="c1"># dw = 1/m * Σ(X.T * error)</span>
-<span class="c1"># db = 1/m * Σ(error)</span>
-<span class="c1"># w = w - alpha * dw</span>
-<span class="c1"># b = b - alpha * db</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_diabetes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># TODO: Load the diabetes dataset</span>
+<span class="c1"># Hint: Use load_diabetes with as_frame=True to get a DataFrame</span>
+
+<span class="c1"># TODO: Extract the features (X) and target (y)</span>
+
+<span class="c1"># TODO: Print the shape of X and y</span>
+
+<span class="c1"># TODO: Display the first few rows of the dataset</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># @forward pass
-# loss fn
-# gradients
-# updating gradients
-# y^ = X.W + b
-# error = y^- y
-# J = (1/2m) * Σ(error**2)
-# dw = 1/m * Σ(X.T * error)
-# db = 1/m * Σ(error)
-# w = w - alpha * dw
-# b = b - alpha * db</div>
+<div class="clipboard-copy-txt" id="cell-1">import numpy as np
+from sklearn.datasets import load_diabetes
+import pandas as pd
+
+# TODO: Load the diabetes dataset
+# Hint: Use load_diabetes with as_frame=True to get a DataFrame
+
+# TODO: Extract the features (X) and target (y)
+
+# TODO: Print the shape of X and y
+
+# TODO: Display the first few rows of the dataset</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<p>Use <code>load_diabetes(as_frame=True)</code> to get the data as a pandas DataFrame. The result will have a <code>.frame</code> attribute.</p>
+</details>
+<details>
+<summary>💡 Hint 2</summary>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">load_diabetes</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'target'</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span>
+</pre></div>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_diabetes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Load the diabetes dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_diabetes</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span>
+
+<span class="c1"># Extract features and target</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'target'</span><span class="p">])</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Print shapes</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X shape: </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># (442, 10)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"y shape: </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># (442,)</span>
+
+<span class="c1"># Display first few rows</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">First 5 rows of features:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+<p><strong>Explanation</strong>: The diabetes dataset has 442 samples with 10 features each. We're predicting disease progression (target).</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-2-how-to-organize-data-as-matrices-rows-vs-columns">Question 2: How to organize data as matrices? (Rows vs Columns)<a class="anchor-link" href="#question-2-how-to-organize-data-as-matrices-rows-vs-columns">¶</a></h3><p><strong>Challenge</strong>: Verify that rows represent data points and columns represent features.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>What does each row represent?</li>
+<li>What does each column represent?</li>
+<li>Why is this convention important for vectorization?</li>
+</ul>
+<p><strong>Expected output</strong>: Print the shape and verify the convention</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b743e11c-545d-43df-8612-10c5be043df9">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
@@ -976,81 +1889,91 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: Print X.shape and explain what each dimension means</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionSGD</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="c1"># TODO: Access the first data point (first row)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="n">n_instances</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span><span class="p">):</span>
-            <span class="c1">#forward pass</span>
-            <span class="n">pred_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
-            <span class="c1">#error</span>
-            <span class="n">error</span> <span class="o">=</span> <span class="n">pred_y</span> <span class="o">-</span> <span class="n">y</span>
-            <span class="n">loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">error</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"loss at </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> iteration is </span><span class="si">{</span><span class="n">loss</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-            <span class="c1">#gradients computation</span>
-            <span class="n">dw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_instances</span>
-            <span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="o">/</span><span class="n">n_instances</span>
-            <span class="c1">#weights update</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">dw</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">db</span>
+<span class="c1"># TODO: Access the first feature across all data points (first column)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
-            
+<span class="c1"># TODO: Explain why this convention (rows=samples, columns=features) is standard</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import numpy as np
+<div class="clipboard-copy-txt" id="cell-2"># TODO: Print X.shape and explain what each dimension means
 
-class LinearRegressionSGD:
-    def __init__(self, alpha = 0.1, iterations = 1000):
-        self.alpha = alpha
-        self.iterations = iterations
-        self.weights = None
-        self.bias = None
+# TODO: Access the first data point (first row)
 
-    def fit(self, X, y):
-        n_instances, n_features = X.shape
-        self.weights = np.zeros(n_features)
-        self.bias = 0
-        for i in range(self.iterations):
-            #forward pass
-            pred_y = np.dot(X, self.weights) + self.bias
-            #error
-            error = pred_y - y
-            loss = np.mean(error**2)
-            if i%1000 == 0:
-                print(f"loss at {i} iteration is {loss}")
-            #gradients computation
-            dw = np.dot(X.T, error) / n_instances
-            db = np.sum(error) /n_instances
-            #weights update
-            self.weights = self.weights - self.alpha * dw
-            self.bias = self.bias - self.alpha * db
+# TODO: Access the first feature across all data points (first column)
 
-    def predict(self, X):
-        return np.dot(X, self.weights) + self.bias
-            </div>
+# TODO: Explain why this convention (rows=samples, columns=features) is standard</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<p>In machine learning:</p>
+<ul>
+<li>Shape: (n_samples, n_features) or (m, n)</li>
+<li>Each row: One complete data point with all its features</li>
+<li>Each column: One feature across all data points</li>
+</ul>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X shape: </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># (442, 10)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of samples (m): </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of features (n): </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># First data point (all features for sample 0)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">First data point: </span><span class="si">{</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># First feature (across all samples)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">First feature across all samples: </span><span class="si">{</span><span class="n">X</span><span class="p">[:,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Convention explanation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"""</span>
+<span class="s2">Convention: Rows = Datapoints, Columns = Features</span>
+<span class="s2">- This allows matrix multiplication: X @ weights</span>
+<span class="s2">- Shape (442, 10) @ (10, 1) = (442, 1) predictions</span>
+<span class="s2">- Each row represents a complete observation</span>
+<span class="s2">- Each column represents a variable/feature</span>
+<span class="s2">"""</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-3-how-to-split-data-into-training-and-testing-sets">Question 3: How to split data into training and testing sets?<a class="anchor-link" href="#question-3-how-to-split-data-into-training-and-testing-sets">¶</a></h3><p><strong>Challenge</strong>: Split the data into training (80%) and testing (20%) sets.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>Why do we need separate train and test sets?</li>
+<li>What does <code>random_state</code> do?</li>
+</ul>
+<p><strong>Expected output</strong>: X_train, X_test, y_train, y_test with appropriate shapes</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=70c06425-cd84-4446-8e0f-ec62f78df3b1">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
@@ -1063,89 +1986,93 @@ class LinearRegressionSGD:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionMiniSGD</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="n">n_instances</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="c1">#Mini batch SGD</span>
-        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span><span class="p">):</span>
-            <span class="c1">#shuffle the data</span>
-            <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">n_instances</span><span class="p">)</span> <span class="c1">#n_instances = 100 it returns 0 to 99 in a shuffled indices = [4,98,0,....,1,2]</span>
-            <span class="n">X_shuffled</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
-            <span class="n">y_shuffled</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+<span class="c1"># TODO: Split data into train (80%) and test (20%) sets</span>
+<span class="c1"># Use random_state=42 for reproducibility</span>
 
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_instances</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">):</span> <span class="c1">#i =0, 0+64, 128, so on</span>
-                <span class="n">X_batch</span> <span class="o">=</span> <span class="n">X_shuffled</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">]</span>
-                <span class="n">y_batch</span> <span class="o">=</span> <span class="n">y_shuffled</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">]</span>
-                <span class="c1">#forward pass</span>
-                <span class="n">pred_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X_batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
-                <span class="n">error</span> <span class="o">=</span> <span class="n">pred_y</span> <span class="o">-</span> <span class="n">y_batch</span>
-                <span class="c1">#gradients # dw = 1/m * Σ(X.T * error)</span>
-                <span class="c1"># db = 1/m * Σ(error)</span>
-                <span class="n">dw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X_batch</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_batch</span><span class="p">)</span>
-                <span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_batch</span><span class="p">)</span>
-                <span class="c1">#gradient update</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">dw</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">db</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+<span class="c1"># TODO: Print shapes of all four arrays</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">class LinearRegressionMiniSGD:
-    def __init__(self, alpha = 0.1, iterations = 1000, batch_size = 64):
-        self.alpha = alpha
-        self.iterations = iterations
-        self.weights = None
-        self.bias = None
-        self.batch_size = batch_size
+<div class="clipboard-copy-txt" id="cell-3">from sklearn.model_selection import train_test_split
 
-    def fit(self, X, y):
-        n_instances, n_features = X.shape
-        self.weights = np.zeros(n_features)
-        self.bias = 0
-        #Mini batch SGD
-        for _ in range(self.iterations):
-            #shuffle the data
-            indices = np.random.permutation(n_instances) #n_instances = 100 it returns 0 to 99 in a shuffled indices = [4,98,0,....,1,2]
-            X_shuffled = X[indices]
-            y_shuffled = y[indices]
+# TODO: Split data into train (80%) and test (20%) sets
+# Use random_state=42 for reproducibility
 
-            for i in range(0, n_instances, self.batch_size): #i =0, 0+64, 128, so on
-                X_batch = X_shuffled[i: i +self.batch_size]
-                y_batch = y_shuffled[i: i +self.batch_size]
-                #forward pass
-                pred_y = np.dot(X_batch, self.weights) + self.bias
-                error = pred_y - y_batch
-                #gradients # dw = 1/m * Σ(X.T * error)
-                # db = 1/m * Σ(error)
-                dw = np.dot(X_batch.T, error) / len(X_batch)
-                db = np.sum(error) / len(X_batch)
-                #gradient update
-                self.weights = self.weights - self.alpha * dw
-                self.bias = self.bias - self.alpha * db
-
-    def predict(self, X):
-        return np.dot(X, self.weights) + self.bias</div>
+# TODO: Print shapes of all four arrays</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X_train shape: </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># (353, 10)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X_test shape: </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>    <span class="c1"># (89, 10)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"y_train shape: </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># (353,)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"y_test shape: </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>    <span class="c1"># (89,)</span>
+</pre></div>
+<p><strong>Why split?</strong> To evaluate model performance on unseen data and prevent overfitting.</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="part-2-batch-gradient-descent-implementation">Part 2: Batch Gradient Descent Implementation<a class="anchor-link" href="#part-2-batch-gradient-descent-implementation">¶</a></h2><p>Now let's implement Linear Regression using Batch Gradient Descent from scratch!</p>
+<p><strong>Key Equations</strong>:</p>
+<ul>
+<li>Forward pass: $\hat{y} = X \cdot W + b$</li>
+<li>Loss: $J = \frac{1}{2m} \sum (\hat{y} - y)^2$</li>
+<li>Gradients: $dW = \frac{1}{m} X^T \cdot error$, $db = \frac{1}{m} \sum error$</li>
+<li>Update: $W = W - \alpha \cdot dW$, $b = b - \alpha \cdot db$</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-4-how-to-initialize-weights-and-bias">Question 4: How to initialize weights and bias?<a class="anchor-link" href="#question-4-how-to-initialize-weights-and-bias">¶</a></h3><p><strong>Challenge</strong>: Create a LinearRegressionSGD class and initialize weights and bias.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>What should be the shape of weights?</li>
+<li>What value should we initialize them to?</li>
+<li>Why is bias a scalar?</li>
+</ul>
+<p><strong>Expected output</strong>: Initialized weights and bias</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c7daa79f-8fca-4550-816d-8bbfec6b46e9">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
@@ -1158,57 +2085,100 @@ class LinearRegressionSGD:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionNormalEqn</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fit_intercept</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">coef</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fit_intercept</span> <span class="o">=</span> <span class="n">fit_intercept</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">intercept</span> <span class="o">=</span> <span class="mf">0.0</span>
-
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionSGD</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="c1"># TODO: Store hyperparameters</span>
+        <span class="c1"># TODO: Initialize weights and bias to None (will set in fit method)</span>
+        <span class="k">pass</span>
+    
     <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_intercept</span><span class="p">:</span>
-            <span class="n">Xc</span> <span class="o">=</span> <span class="n">X</span> <span class="o">-</span> <span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-            <span class="n">yc</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-            <span class="n">parameters</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">Xc</span><span class="p">,</span> <span class="n">yc</span><span class="p">,</span> <span class="n">rcond</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">coef</span> <span class="o">=</span> <span class="n">parameters</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">intercept</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">parameters</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">coef</span> <span class="o">=</span> <span class="n">parameters</span>
-    
-    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">X</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">intercept</span>
+        <span class="c1"># TODO: Get number of instances and features from X.shape</span>
+        
+        <span class="c1"># TODO: Initialize weights as zeros with shape (n_features,)</span>
+        
+        <span class="c1"># TODO: Initialize bias as 0</span>
+        
+        <span class="k">pass</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">class LinearRegressionNormalEqn:
-    def __init__(self, fit_intercept = True):
-        self.coef = None
-        self.fit_intercept = fit_intercept
-        self.intercept = 0.0
-
-    def fit(self, X, y):
-        if self.fit_intercept:
-            Xc = X - X.mean(axis=0)
-            yc = y - y.mean()
-            parameters, *_ = np.linalg.lstsq(Xc, yc, rcond = None)
-            self.coef = parameters
-            self.intercept = y.mean() - X.mean(axis = 0) @ self.coef
-        else:
-            parameters, *_ = np.linalg.lstsq(X, y, rcond=None)
-            self.coef = parameters
+<div class="clipboard-copy-txt" id="cell-4">class LinearRegressionSGD:
+    def __init__(self, alpha=0.1, iterations=1000):
+        # TODO: Store hyperparameters
+        # TODO: Initialize weights and bias to None (will set in fit method)
+        pass
     
-    def predict(self, X):
-        return X @ self.coef + self.intercept</div>
+    def fit(self, X, y):
+        # TODO: Get number of instances and features from X.shape
+        
+        # TODO: Initialize weights as zeros with shape (n_features,)
+        
+        # TODO: Initialize bias as 0
+        
+        pass</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<p>If X has shape (m, n), weights should have shape (n,) to allow matrix multiplication X @ weights.</p>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionSGD</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">n_instances</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+<p><strong>Explanation</strong>:</p>
+<ul>
+<li>Weights have shape (n_features,) - one weight per feature</li>
+<li>Bias is a single scalar value</li>
+<li>Initialize to zeros (safe for linear regression, though random init is used in deep learning)</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-5-how-to-implement-the-forward-pass">Question 5: How to implement the forward pass?<a class="anchor-link" href="#question-5-how-to-implement-the-forward-pass">¶</a></h3><p><strong>Challenge</strong>: Implement the prediction formula: $\hat{y} = X \cdot W + b$</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>What operation combines X and weights?</li>
+<li>How is bias added to all predictions?</li>
+<li>What should be the shape of pred_y?</li>
+</ul>
+<p><strong>Expected output</strong>: Predictions for all training samples</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=92578076-f0cf-4a2f-9b3f-ab9e46e7c9b3">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
@@ -1221,41 +2191,77 @@ class LinearRegressionSGD:
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_diabetes</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Add this inside the fit method, after initialization</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">load_diabetes</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span>
-
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"target"</span><span class="p">])</span><span class="o">.</span><span class="n">values</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"target"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="c1"># for i in range(self.iterations):</span>
+<span class="c1">#     # TODO: Forward pass - compute predictions</span>
+<span class="c1">#     # pred_y = ?</span>
+<span class="c1">#     pass</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">from sklearn.datasets import load_diabetes
-import pandas as pd
-from sklearn.model_selection import train_test_split
+<div class="clipboard-copy-txt" id="cell-5"># Add this inside the fit method, after initialization
 
-data = load_diabetes(as_frame=True)
-df = data.frame
-
-X = df.drop(columns=["target"]).values
-y = df["target"].values
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)</div>
+# for i in range(self.iterations):
+#     # TODO: Forward pass - compute predictions
+#     # pred_y = ?
+#     pass</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f1708b68-ba4e-404c-b347-b486c35edd1a">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<p>Use <code>np.dot(X, self.weights)</code> or <code>X @ self.weights</code> for matrix multiplication.</p>
+</details>
+<details>
+<summary>💡 Hint 2</summary>
+<div class="highlight"><pre><span></span><span class="n">pred_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+</pre></div>
+<p>Shape: (m, n) @ (n,) + scalar = (m,)</p>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span><span class="p">):</span>
+    <span class="c1"># Forward pass</span>
+    <span class="n">pred_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+</pre></div>
+<p><strong>Explanation</strong>: This computes predictions for ALL samples simultaneously (vectorized operation).</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-6-how-to-compute-the-error-vector">Question 6: How to compute the error vector?<a class="anchor-link" href="#question-6-how-to-compute-the-error-vector">¶</a></h3><p><strong>Challenge</strong>: Calculate the difference between predictions and actual values.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>What is error?</li>
+<li>What should be the shape of error?</li>
+<li>Why is this called "residual"?</li>
+</ul>
+<p><strong>Expected output</strong>: Error vector with shape (m,)</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
@@ -1268,77 +2274,59 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegressionSGD</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">y_pred</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Add after forward pass</span>
+<span class="c1"># TODO: Compute error</span>
+<span class="c1"># error = ?</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">model = LinearRegressionSGD(alpha = 0.1, iterations = 10000)
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
-y_pred</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>loss at 0 iteration is 29711.32294617564
-loss at 1000 iteration is 4008.4468767378576
-loss at 2000 iteration is 3443.577918490818
-loss at 3000 iteration is 3214.7373024153208
-loss at 4000 iteration is 3094.071540430258
-loss at 5000 iteration is 3022.883922921272
-loss at 6000 iteration is 2979.024610480903
-loss at 7000 iteration is 2951.41074855817
-loss at 8000 iteration is 2933.7448439816944
-loss at 9000 iteration is 2922.2725655888
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>array([142.6302984 , 177.20486571, 141.80764598, 289.4203295 ,
-       124.91078374,  98.61468745, 252.10688087, 191.55248404,
-        88.41342437, 115.47377347,  96.36088178, 154.81313019,
-        65.94589262, 209.02420815, 105.54079599, 135.52234042,
-       223.22697556, 246.25827849, 193.69242364, 213.23282734,
-       200.6117166 ,  89.42938074,  76.44105239, 188.46120071,
-       153.95262118, 164.45986524, 187.73749881, 176.24680176,
-        51.95783925, 117.07065057, 179.72530895,  94.349441  ,
-       133.32434145, 181.91734578, 173.0727751 , 189.56252606,
-       126.94837779, 123.68325753, 152.72348896,  61.44699847,
-        81.66610406, 112.12475683, 158.76526185, 153.75551598,
-       173.69280551,  66.10559619,  82.62400755, 106.033354  ,
-        61.8114628 , 154.91951309, 152.68083722,  65.89075468,
-       116.87810138, 109.79443004, 169.6528556 , 154.73169551,
-        98.78389552, 203.01842262, 115.27793949,  69.01949261,
-       183.19516116, 195.93706305, 141.38339331, 111.70735585,
-       126.47397047, 197.19154438, 168.37528539, 160.18052212,
-       112.81378423, 140.21770358, 178.20377919, 195.67366136,
-       238.95719488, 141.9965111 ,  83.05477384, 151.13522909,
-       195.80217362, 199.76065029, 159.96721858, 194.35186288,
-       115.94168335, 130.86619381,  55.25253555,  60.77605695,
-       113.07622935,  88.63387136,  78.41151395,  64.16396037,
-       158.13385766])</pre>
+<div class="clipboard-copy-txt" id="cell-6"># Add after forward pass
+# TODO: Compute error
+# error = ?</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e78c9aac-5967-46eb-9045-2ef3f58d448e">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="n">error</span> <span class="o">=</span> <span class="n">pred_y</span> <span class="o">-</span> <span class="n">y</span>
+</pre></div>
+<p><strong>Explanation</strong>: Error (residual) is how much our prediction differs from the true value. Positive error means we over-predicted, negative means under-predicted.</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-7-how-to-compute-the-loss-cost-function">Question 7: How to compute the loss (cost function)?<a class="anchor-link" href="#question-7-how-to-compute-the-loss-cost-function">¶</a></h3><p><strong>Challenge</strong>: Calculate Mean Squared Error (MSE).</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>Why square the error?</li>
+<li>Why take the mean?</li>
+<li>How to do this efficiently with numpy?</li>
+</ul>
+<p><strong>Expected output</strong>: A single scalar loss value</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
@@ -1351,61 +2339,77 @@ loss at 9000 iteration is 2922.2725655888
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegressionMiniSGD</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">y_pred</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: Compute loss (MSE)</span>
+<span class="c1"># loss = ?</span>
+
+<span class="c1"># TODO: Print loss every 1000 iterations</span>
+<span class="c1"># if i % 1000 == 0:</span>
+<span class="c1">#     print(f"loss at {i} iteration is {loss}")</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">model = LinearRegressionMiniSGD(alpha = 0.1, iterations = 10000, batch_size = 64)
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
-y_pred</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>array([140.1929884 , 181.39813901, 139.97778706, 294.23736481,
-       120.80900828,  92.99507009, 257.27862597, 187.19676543,
-        83.16039833, 110.60693282,  94.65729513, 162.50216395,
-        63.54593554, 205.07888054,  98.24530583, 132.05017978,
-       221.74077076, 246.58580235, 196.19535515, 214.49525284,
-       207.46269536,  88.35680084,  71.60887804, 188.2386971 ,
-       156.3170403 , 161.92572449, 189.80473403, 176.66338617,
-        49.42033115, 110.06211545, 180.38794667,  91.02814874,
-       131.12327303, 180.33111425, 172.87239689, 191.27336183,
-       121.86129072, 117.26698497, 144.79051506,  60.52686162,
-        73.99686501, 107.44542985, 161.80057798, 148.63685257,
-       175.30880631,  65.19866554,  78.13581322, 106.60013056,
-        58.0630515 , 161.18991063, 157.27568467,  65.14242997,
-       113.52408235, 107.65559469, 169.4175832 , 160.27738418,
-        93.82308133, 207.9257593 , 117.84194657,  68.23767507,
-       184.46220344, 202.68015582, 141.56260789, 104.61379296,
-       125.40792841, 203.91353262, 166.54738185, 161.57956511,
-       118.50242487, 140.31191087, 180.18416804, 194.50815712,
-       235.04179193, 142.47028333,  82.21531395, 150.21499249,
-       193.03497907, 206.03059905, 157.39283803, 198.90154371,
-       114.00967864, 137.47257779,  53.37778997,  55.34711457,
-       110.9552777 ,  84.66715148,  80.48394633,  61.33460286,
-       163.984502  ])</pre>
+<div class="clipboard-copy-txt" id="cell-7"># TODO: Compute loss (MSE)
+# loss = ?
+
+# TODO: Print loss every 1000 iterations
+# if i % 1000 == 0:
+#     print(f"loss at {i} iteration is {loss}")</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5efdc260-52a8-4122-b883-24355ee0dadd">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<p>MSE = mean of squared errors. Use <code>np.mean(error**2)</code>.</p>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">error</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"loss at </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> iteration is </span><span class="si">{</span><span class="n">loss</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<p><strong>Why MSE?</strong></p>
+<ul>
+<li>Squaring makes all errors positive</li>
+<li>Larger errors get penalized more (quadratic penalty)</li>
+<li>Differentiable for gradient computation</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-8-how-to-compute-gradients">Question 8: How to compute gradients?<a class="anchor-link" href="#question-8-how-to-compute-gradients">¶</a></h3><p><strong>Challenge</strong>: Implement gradient computation for weights and bias.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>Why do we need $X^T$ (transpose)?</li>
+<li>Why divide by m (number of samples)?</li>
+<li>What's the relationship between error and gradients?</li>
+</ul>
+<p><strong>Expected output</strong>: dw and db with correct shapes</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
@@ -1418,61 +2422,85 @@ y_pred</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegressionNormalEqn</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">y_pred</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: Compute gradient for weights</span>
+<span class="c1"># dw = ?</span>
+
+<span class="c1"># TODO: Compute gradient for bias</span>
+<span class="c1"># db = ?</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">model = LinearRegressionNormalEqn()
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
-y_pred</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>array([139.5475584 , 179.51720835, 134.03875572, 291.41702925,
-       123.78965872,  92.1723465 , 258.23238899, 181.33732057,
-        90.22411311, 108.63375858,  94.13865744, 168.43486358,
-        53.5047888 , 206.63081659, 100.12925869, 130.66657085,
-       219.53071499, 250.7803234 , 196.3688346 , 218.57511815,
-       207.35050182,  88.48340941,  70.43285917, 188.95914235,
-       154.8868162 , 159.36170122, 188.31263363, 180.39094033,
-        47.99046561, 108.97453871, 174.77897633,  86.36406656,
-       132.95761215, 184.53819483, 173.83220911, 190.35858492,
-       124.4156176 , 119.65110656, 147.95168682,  59.05405241,
-        71.62331856, 107.68284704, 165.45365458, 155.00975931,
-       171.04799096,  61.45761356,  71.66672581, 114.96732206,
-        51.57975523, 167.57599528, 152.52291955,  62.95568515,
-       103.49741722, 109.20751489, 175.64118426, 154.60296242,
-        94.41704366, 210.74209145, 120.2566205 ,  77.61585399,
-       187.93203995, 206.49337474, 140.63167076, 105.59678023,
-       130.70432536, 202.18534537, 171.13039501, 164.91423047,
-       124.72472569, 144.81030894, 181.99635452, 199.41369642,
-       234.21436188, 145.95665512,  79.86703276, 157.36941275,
-       192.74412541, 208.89814032, 158.58722555, 206.02195855,
-       107.47971675, 140.93598906,  54.82129332,  55.92573195,
-       115.01180018,  78.95584188,  81.56087285,  54.37997256,
-       166.2543518 ])</pre>
+<div class="clipboard-copy-txt" id="cell-8"># TODO: Compute gradient for weights
+# dw = ?
+
+# TODO: Compute gradient for bias
+# db = ?</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d06bd329-9e55-492e-a43a-d8a0cd9677a9">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<p>Formulas:</p>
+<ul>
+<li>$dW = \frac{1}{m} X^T \cdot error$</li>
+<li>$db = \frac{1}{m} \sum error$</li>
+</ul>
+</details>
+<details>
+<summary>💡 Hint 2</summary>
+<div class="highlight"><pre><span></span><span class="n">dw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_instances</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_instances</span>
+</pre></div>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Gradients computation</span>
+<span class="n">dw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_instances</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_instances</span>
+</pre></div>
+<p><strong>Explanation</strong>:</p>
+<ul>
+<li><code>X.T @ error</code> computes how much each feature contributes to total error</li>
+<li>Shape: (n, m) @ (m,) = (n,) - one gradient per weight</li>
+<li>Division by m gives average gradient across all samples</li>
+<li>db is simpler: just average of all errors</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-9-how-to-update-weights-using-learning-rate">Question 9: How to update weights using learning rate?<a class="anchor-link" href="#question-9-how-to-update-weights-using-learning-rate">¶</a></h3><p><strong>Challenge</strong>: Implement the gradient descent update rule.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>Why subtract (not add) the gradient?</li>
+<li>What does learning rate control?</li>
+<li>What happens if alpha is too large or too small?</li>
+</ul>
+<p><strong>Expected output</strong>: Updated weights and bias</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
@@ -1485,53 +2513,1167 @@ y_pred</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: Update weights</span>
+<span class="c1"># self.weights = ?</span>
+
+<span class="c1"># TODO: Update bias</span>
+<span class="c1"># self.bias = ?</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-9"># TODO: Update weights
+# self.weights = ?
+
+# TODO: Update bias
+# self.bias = ?</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<p>Gradient descent moves in the OPPOSITE direction of the gradient (steepest descent).</p>
+<p>Update rule: $\theta = \theta - \alpha \cdot d\theta$</p>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Weights update</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">dw</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">db</span>
+</pre></div>
+<p><strong>Key Points</strong>:</p>
+<ul>
+<li>Negative gradient direction leads to minimum</li>
+<li>Learning rate (alpha) controls step size</li>
+<li>Too large alpha → overshooting, divergence</li>
+<li>Too small alpha → slow convergence</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-10-complete-the-predict-method">Question 10: Complete the predict method<a class="anchor-link" href="#question-10-complete-the-predict-method">¶</a></h3><p><strong>Challenge</strong>: Implement prediction using learned weights.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>Is this the same as forward pass?</li>
+<li>Can we use this for test data?</li>
+</ul>
+<p><strong>Expected output</strong>: Predictions for any input X</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionSGD</span><span class="p">:</span>
+    <span class="c1"># ... (previous methods)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="c1"># TODO: Return predictions using learned weights and bias</span>
+        <span class="k">pass</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-10">class LinearRegressionSGD:
+    # ... (previous methods)
+    
+    def predict(self, X):
+        # TODO: Return predictions using learned weights and bias
+        pass</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+</pre></div>
+<p><strong>Complete Class:</strong></p>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionSGD</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">n_instances</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span><span class="p">):</span>
+            <span class="c1"># Forward pass</span>
+            <span class="n">pred_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+            
+            <span class="c1"># Error</span>
+            <span class="n">error</span> <span class="o">=</span> <span class="n">pred_y</span> <span class="o">-</span> <span class="n">y</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">error</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"loss at </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> iteration is </span><span class="si">{</span><span class="n">loss</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            
+            <span class="c1"># Gradients computation</span>
+            <span class="n">dw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_instances</span>
+            <span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_instances</span>
+            
+            <span class="c1"># Weights update</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">dw</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">db</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-11-test-your-batch-gradient-descent-implementation">Question 11: Test your Batch Gradient Descent implementation<a class="anchor-link" href="#question-11-test-your-batch-gradient-descent-implementation">¶</a></h3><p><strong>Challenge</strong>: Train the model and make predictions.</p>
+<p><strong>Expected output</strong>: Loss decreasing over iterations, predictions on test set</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: Create an instance of LinearRegressionSGD with alpha=0.1 and iterations=10000</span>
+
+<span class="c1"># TODO: Fit the model on training data</span>
+
+<span class="c1"># TODO: Make predictions on test data</span>
+
+<span class="c1"># TODO: Print first 10 predictions</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-11"># TODO: Create an instance of LinearRegressionSGD with alpha=0.1 and iterations=10000
+
+# TODO: Fit the model on training data
+
+# TODO: Make predictions on test data
+
+# TODO: Print first 10 predictions</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegressionSGD</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">y_pred</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">First 10 predictions: </span><span class="si">{</span><span class="n">y_pred</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">from sklearn.linear_model import LinearRegression
-model = LinearRegression()
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
-y_pred</div>
+</details>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>array([139.5475584 , 179.51720835, 134.03875572, 291.41702925,
-       123.78965872,  92.1723465 , 258.23238899, 181.33732057,
-        90.22411311, 108.63375858,  94.13865744, 168.43486358,
-        53.5047888 , 206.63081659, 100.12925869, 130.66657085,
-       219.53071499, 250.7803234 , 196.3688346 , 218.57511815,
-       207.35050182,  88.48340941,  70.43285917, 188.95914235,
-       154.8868162 , 159.36170122, 188.31263363, 180.39094033,
-        47.99046561, 108.97453871, 174.77897633,  86.36406656,
-       132.95761215, 184.53819483, 173.83220911, 190.35858492,
-       124.4156176 , 119.65110656, 147.95168682,  59.05405241,
-        71.62331856, 107.68284704, 165.45365458, 155.00975931,
-       171.04799096,  61.45761356,  71.66672581, 114.96732206,
-        51.57975523, 167.57599528, 152.52291955,  62.95568515,
-       103.49741722, 109.20751489, 175.64118426, 154.60296242,
-        94.41704366, 210.74209145, 120.2566205 ,  77.61585399,
-       187.93203995, 206.49337474, 140.63167076, 105.59678023,
-       130.70432536, 202.18534537, 171.13039501, 164.91423047,
-       124.72472569, 144.81030894, 181.99635452, 199.41369642,
-       234.21436188, 145.95665512,  79.86703276, 157.36941275,
-       192.74412541, 208.89814032, 158.58722555, 206.02195855,
-       107.47971675, 140.93598906,  54.82129332,  55.92573195,
-       115.01180018,  78.95584188,  81.56087285,  54.37997256,
-       166.2543518 ])</pre>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="part-3-mini-batch-stochastic-gradient-descent">Part 3: Mini-batch Stochastic Gradient Descent<a class="anchor-link" href="#part-3-mini-batch-stochastic-gradient-descent">¶</a></h2><p>Now let's implement a more efficient version using mini-batches!</p>
 </div>
 </div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-12-why-shuffle-data-implement-shuffling">Question 12: Why shuffle data? Implement shuffling<a class="anchor-link" href="#question-12-why-shuffle-data-implement-shuffling">¶</a></h3><p><strong>Challenge</strong>: Shuffle the training data before creating batches.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>Why shuffle before each epoch?</li>
+<li>How to shuffle X and y together (keep pairs intact)?</li>
+<li>What does <code>np.random.permutation</code> do?</li>
+</ul>
+<p><strong>Expected output</strong>: Shuffled indices</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: Generate shuffled indices using np.random.permutation</span>
+<span class="c1"># indices = ?</span>
+
+<span class="c1"># TODO: Use indices to shuffle X and y</span>
+<span class="c1"># X_shuffled = ?</span>
+<span class="c1"># y_shuffled = ?</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-12"># TODO: Generate shuffled indices using np.random.permutation
+# indices = ?
+
+# TODO: Use indices to shuffle X and y
+# X_shuffled = ?
+# y_shuffled = ?</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<div class="highlight"><pre><span></span><span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">n_instances</span><span class="p">)</span>
+</pre></div>
+<p>This returns shuffled indices from 0 to n_instances-1.</p>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Shuffle the data</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">n_instances</span><span class="p">)</span>
+<span class="n">X_shuffled</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+<span class="n">y_shuffled</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+</pre></div>
+<p><strong>Why shuffle?</strong></p>
+<ul>
+<li>Prevents model from learning order-dependent patterns</li>
+<li>Ensures each batch is representative of full dataset</li>
+<li>Improves convergence in SGD/mini-batch</li>
+</ul>
+<p>Example: If n_instances=100, indices might be [47, 2, 89, 15, ...] (random order)</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-13-how-to-create-batches">Question 13: How to create batches?<a class="anchor-link" href="#question-13-how-to-create-batches">¶</a></h3><p><strong>Challenge</strong>: Implement batch creation logic.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>How to split data into chunks of batch_size?</li>
+<li>What happens to the last batch if it's smaller?</li>
+<li>How to loop through batches?</li>
+</ul>
+<p><strong>Expected output</strong>: Batches of size 64 (or smaller for last batch)</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: Loop through batches using range with step=batch_size</span>
+<span class="c1"># for i in range(?, ?, ?):</span>
+
+<span class="c1"># TODO: Extract batch from shuffled data</span>
+<span class="c1"># X_batch = ?</span>
+<span class="c1"># y_batch = ?</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-13"># TODO: Loop through batches using range with step=batch_size
+# for i in range(?, ?, ?):
+
+# TODO: Extract batch from shuffled data
+# X_batch = ?
+# y_batch = ?</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<p>Use <code>range(0, n_instances, batch_size)</code> to get starting indices: 0, 64, 128, 192, ...</p>
+</details>
+<details>
+<summary>💡 Hint 2</summary>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_instances</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">):</span>
+    <span class="n">X_batch</span> <span class="o">=</span> <span class="n">X_shuffled</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">]</span>
+    <span class="n">y_batch</span> <span class="o">=</span> <span class="n">y_shuffled</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">]</span>
+</pre></div>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_instances</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">):</span>
+    <span class="n">X_batch</span> <span class="o">=</span> <span class="n">X_shuffled</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">]</span>
+    <span class="n">y_batch</span> <span class="o">=</span> <span class="n">y_shuffled</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">]</span>
+</pre></div>
+<p><strong>Explanation</strong>:</p>
+<ul>
+<li>If n_instances=353 and batch_size=64:<ul>
+<li>Batch 1: indices 0:64 (64 samples)</li>
+<li>Batch 2: indices 64:128 (64 samples)</li>
+<li>Batch 3: indices 128:192 (64 samples)</li>
+<li>...</li>
+<li>Last batch: indices 320:353 (33 samples) ← smaller!</li>
+</ul>
+</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-14-implement-mini-batch-sgd">Question 14: Implement Mini-batch SGD<a class="anchor-link" href="#question-14-implement-mini-batch-sgd">¶</a></h3><p><strong>Challenge</strong>: Complete the LinearRegressionMiniSGD class.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>How does this differ from Batch GD?</li>
+<li>Why use <code>len(X_batch)</code> instead of <code>n_instances</code>?</li>
+<li>What's the tradeoff with batch_size?</li>
+</ul>
+<p><strong>Expected output</strong>: Complete working Mini-batch SGD implementation</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionMiniSGD</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
+        <span class="c1"># TODO: Initialize hyperparameters</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="c1"># TODO: Initialize weights and bias</span>
+        
+        <span class="c1"># TODO: Loop for iterations (epochs)</span>
+        <span class="c1"># for _ in range(self.iterations):</span>
+        
+            <span class="c1"># TODO: Shuffle data</span>
+            
+            <span class="c1"># TODO: Loop through batches</span>
+            <span class="c1"># for i in range(0, n_instances, self.batch_size):</span>
+            
+                <span class="c1"># TODO: Get batch</span>
+                
+                <span class="c1"># TODO: Forward pass on batch</span>
+                
+                <span class="c1"># TODO: Compute error on batch</span>
+                
+                <span class="c1"># TODO: Compute gradients using len(X_batch)</span>
+                
+                <span class="c1"># TODO: Update weights</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="c1"># TODO: Return predictions</span>
+        <span class="k">pass</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-14">class LinearRegressionMiniSGD:
+    def __init__(self, alpha=0.1, iterations=1000, batch_size=64):
+        # TODO: Initialize hyperparameters
+        pass
+    
+    def fit(self, X, y):
+        # TODO: Initialize weights and bias
+        
+        # TODO: Loop for iterations (epochs)
+        # for _ in range(self.iterations):
+        
+            # TODO: Shuffle data
+            
+            # TODO: Loop through batches
+            # for i in range(0, n_instances, self.batch_size):
+            
+                # TODO: Get batch
+                
+                # TODO: Forward pass on batch
+                
+                # TODO: Compute error on batch
+                
+                # TODO: Compute gradients using len(X_batch)
+                
+                # TODO: Update weights
+        pass
+    
+    def predict(self, X):
+        # TODO: Return predictions
+        pass</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionMiniSGD</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">iterations</span> <span class="o">=</span> <span class="n">iterations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">n_instances</span><span class="p">,</span> <span class="n">n_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="c1"># Mini batch SGD</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterations</span><span class="p">):</span>
+            <span class="c1"># Shuffle the data</span>
+            <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">n_instances</span><span class="p">)</span>
+            <span class="n">X_shuffled</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+            <span class="n">y_shuffled</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+            
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_instances</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">):</span>
+                <span class="n">X_batch</span> <span class="o">=</span> <span class="n">X_shuffled</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">]</span>
+                <span class="n">y_batch</span> <span class="o">=</span> <span class="n">y_shuffled</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">]</span>
+                
+                <span class="c1"># Forward pass</span>
+                <span class="n">pred_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X_batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">pred_y</span> <span class="o">-</span> <span class="n">y_batch</span>
+                
+                <span class="c1"># Gradients (note: using len(X_batch), not n_instances)</span>
+                <span class="n">dw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X_batch</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_batch</span><span class="p">)</span>
+                <span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_batch</span><span class="p">)</span>
+                
+                <span class="c1"># Gradient update</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">dw</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">db</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
+</pre></div>
+<p><strong>Key Differences from Batch GD</strong>:</p>
+<ul>
+<li>Updates happen multiple times per epoch (once per batch)</li>
+<li>Uses <code>len(X_batch)</code> for averaging (handles variable-size last batch)</li>
+<li>Faster convergence with less memory</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-15-test-mini-batch-sgd">Question 15: Test Mini-batch SGD<a class="anchor-link" href="#question-15-test-mini-batch-sgd">¶</a></h3><p><strong>Challenge</strong>: Train and compare with Batch GD.</p>
+<p><strong>Expected output</strong>: Predictions from Mini-batch SGD</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: Create and train LinearRegressionMiniSGD</span>
+
+<span class="c1"># TODO: Make predictions</span>
+
+<span class="c1"># TODO: Print first 10 predictions</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-15"># TODO: Create and train LinearRegressionMiniSGD
+
+# TODO: Make predictions
+
+# TODO: Print first 10 predictions</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="n">model_mini</span> <span class="o">=</span> <span class="n">LinearRegressionMiniSGD</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+<span class="n">model_mini</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_mini</span> <span class="o">=</span> <span class="n">model_mini</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"First 10 predictions: </span><span class="si">{</span><span class="n">y_pred_mini</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="part-4-normal-equation-closed-form-solution">Part 4: Normal Equation (Closed-form Solution)<a class="anchor-link" href="#part-4-normal-equation-closed-form-solution">¶</a></h2><p>Instead of iterative optimization, we can solve directly using linear algebra!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-16-understand-the-normal-equation">Question 16: Understand the Normal Equation<a class="anchor-link" href="#question-16-understand-the-normal-equation">¶</a></h3><p><strong>Challenge</strong>: Implement the closed-form solution: $\theta = (X^T X)^{-1} X^T y$</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>Why does this work?</li>
+<li>What if we want to include an intercept?</li>
+<li>What's the difference between centering and adding a bias column?</li>
+</ul>
+<p><strong>Expected output</strong>: Optimal weights computed directly</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionNormalEqn</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="c1"># TODO: Store parameters</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_intercept</span><span class="p">:</span>
+            <span class="c1"># TODO: Center X (subtract mean)</span>
+            <span class="c1"># Xc = ?</span>
+            
+            <span class="c1"># TODO: Center y</span>
+            <span class="c1"># yc = ?</span>
+            
+            <span class="c1"># TODO: Use np.linalg.lstsq to solve for parameters</span>
+            <span class="c1"># parameters, *_ = np.linalg.lstsq(?, ?, rcond=None)</span>
+            
+            <span class="c1"># TODO: Store coefficients</span>
+            <span class="c1"># self.coef = ?</span>
+            
+            <span class="c1"># TODO: Calculate intercept from means</span>
+            <span class="c1"># self.intercept = ?</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># TODO: Solve without intercept</span>
+            <span class="k">pass</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="c1"># TODO: Return predictions</span>
+        <span class="k">pass</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-16">class LinearRegressionNormalEqn:
+    def __init__(self, fit_intercept=True):
+        # TODO: Store parameters
+        pass
+    
+    def fit(self, X, y):
+        if self.fit_intercept:
+            # TODO: Center X (subtract mean)
+            # Xc = ?
+            
+            # TODO: Center y
+            # yc = ?
+            
+            # TODO: Use np.linalg.lstsq to solve for parameters
+            # parameters, *_ = np.linalg.lstsq(?, ?, rcond=None)
+            
+            # TODO: Store coefficients
+            # self.coef = ?
+            
+            # TODO: Calculate intercept from means
+            # self.intercept = ?
+            pass
+        else:
+            # TODO: Solve without intercept
+            pass
+    
+    def predict(self, X):
+        # TODO: Return predictions
+        pass</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>💡 Hint 1</summary>
+<p>Centering data means subtracting the mean:</p>
+<div class="highlight"><pre><span></span><span class="n">Xc</span> <span class="o">=</span> <span class="n">X</span> <span class="o">-</span> <span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">yc</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</details>
+<details>
+<summary>💡 Hint 2</summary>
+<p><code>np.linalg.lstsq</code> solves the least squares problem. After solving with centered data, the intercept can be recovered:</p>
+<div class="highlight"><pre><span></span><span class="n">intercept</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">@</span> <span class="n">coef</span>
+</pre></div>
+</details>
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearRegressionNormalEqn</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coef</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fit_intercept</span> <span class="o">=</span> <span class="n">fit_intercept</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">intercept</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_intercept</span><span class="p">:</span>
+            <span class="c1"># Center the data</span>
+            <span class="n">Xc</span> <span class="o">=</span> <span class="n">X</span> <span class="o">-</span> <span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">yc</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            
+            <span class="c1"># Solve using least squares</span>
+            <span class="n">parameters</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">Xc</span><span class="p">,</span> <span class="n">yc</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">coef</span> <span class="o">=</span> <span class="n">parameters</span>
+            
+            <span class="c1"># Calculate intercept</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">intercept</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">parameters</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">coef</span> <span class="o">=</span> <span class="n">parameters</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">X</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">coef</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">intercept</span>
+</pre></div>
+<p><strong>Why center data?</strong></p>
+<ul>
+<li>Centering allows fitting intercept without adding a column of 1's</li>
+<li>Mathematically equivalent to Normal Equation with augmented X</li>
+<li>More numerically stable</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-17-test-normal-equation">Question 17: Test Normal Equation<a class="anchor-link" href="#question-17-test-normal-equation">¶</a></h3><p><strong>Challenge</strong>: Train using Normal Equation and compare with GD methods.</p>
+<p><strong>Expected output</strong>: Predictions from Normal Equation</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># TODO: Create and train LinearRegressionNormalEqn</span>
+
+<span class="c1"># TODO: Make predictions</span>
+
+<span class="c1"># TODO: Print first 10 predictions</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-17"># TODO: Create and train LinearRegressionNormalEqn
+
+# TODO: Make predictions
+
+# TODO: Print first 10 predictions</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="n">model_normal</span> <span class="o">=</span> <span class="n">LinearRegressionNormalEqn</span><span class="p">()</span>
+<span class="n">model_normal</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_normal</span> <span class="o">=</span> <span class="n">model_normal</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"First 10 predictions: </span><span class="si">{</span><span class="n">y_pred_normal</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="part-5-comparison-analysis">Part 5: Comparison &amp; Analysis<a class="anchor-link" href="#part-5-comparison-analysis">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-18-compare-with-sklearn">Question 18: Compare with sklearn<a class="anchor-link" href="#question-18-compare-with-sklearn">¶</a></h3><p><strong>Challenge</strong>: Train sklearn's LinearRegression and compare predictions.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>How close are your implementations to sklearn?</li>
+<li>Which method does sklearn use internally?</li>
+</ul>
+<p><strong>Expected output</strong>: sklearn predictions</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># TODO: Create and train sklearn model</span>
+
+<span class="c1"># TODO: Make predictions</span>
+
+<span class="c1"># TODO: Print first 10 predictions</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-18">from sklearn.linear_model import LinearRegression
+
+# TODO: Create and train sklearn model
+
+# TODO: Make predictions
+
+# TODO: Print first 10 predictions</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="n">model_sklearn</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model_sklearn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_sklearn</span> <span class="o">=</span> <span class="n">model_sklearn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"First 10 predictions: </span><span class="si">{</span><span class="n">y_pred_sklearn</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<p><strong>Note</strong>: sklearn uses a variant of Normal Equation (SVD-based) for numerical stability.</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-19-calculate-and-compare-metrics">Question 19: Calculate and compare metrics<a class="anchor-link" href="#question-19-calculate-and-compare-metrics">¶</a></h3><p><strong>Challenge</strong>: Compute Mean Squared Error (MSE) for all methods.</p>
+<p><strong>Think about</strong>:</p>
+<ul>
+<li>Which method gives the best results?</li>
+<li>Are the results similar?</li>
+<li>Why might they differ slightly?</li>
+</ul>
+<p><strong>Expected output</strong>: MSE comparison table</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_squared_error</span>
+
+<span class="c1"># TODO: Compute MSE for all methods</span>
+<span class="c1"># mse_bgd = ?</span>
+<span class="c1"># mse_mini = ?</span>
+<span class="c1"># mse_normal = ?</span>
+<span class="c1"># mse_sklearn = ?</span>
+
+<span class="c1"># TODO: Print comparison table</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-19">from sklearn.metrics import mean_squared_error
+
+# TODO: Compute MSE for all methods
+# mse_bgd = ?
+# mse_mini = ?
+# mse_normal = ?
+# mse_sklearn = ?
+
+# TODO: Print comparison table</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Solution</summary>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_squared_error</span>
+
+<span class="c1"># Assuming you have predictions from all models</span>
+<span class="n">mse_bgd</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">mse_mini</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mini</span><span class="p">)</span>
+<span class="n">mse_normal</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_normal</span><span class="p">)</span>
+<span class="n">mse_sklearn</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_sklearn</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">=== Model Comparison ==="</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Batch Gradient Descent MSE: </span><span class="si">{</span><span class="n">mse_bgd</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mini-batch SGD MSE: </span><span class="si">{</span><span class="n">mse_mini</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Normal Equation MSE: </span><span class="si">{</span><span class="n">mse_normal</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"sklearn LinearRegression MSE: </span><span class="si">{</span><span class="n">mse_sklearn</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<p><strong>Expected Result</strong>: All methods should give very similar MSE (within small rounding errors).</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="question-20-final-analysis-questions">Question 20: Final Analysis Questions<a class="anchor-link" href="#question-20-final-analysis-questions">¶</a></h3><p><strong>Reflect on what you've learned</strong>:</p>
+<ol>
+<li><p><strong>When would you use each method?</strong></p>
+<ul>
+<li>Batch GD: ?</li>
+<li>Mini-batch SGD: ?</li>
+<li>Normal Equation: ?</li>
+</ul>
+</li>
+<li><p><strong>What are the computational complexities?</strong></p>
+<ul>
+<li>Gradient Descent: ?</li>
+<li>Normal Equation: ?</li>
+</ul>
+</li>
+<li><p><strong>What happens if X^T X is not invertible?</strong></p>
+</li>
+<li><p><strong>How does batch size affect training?</strong></p>
+</li>
+<li><p><strong>What would you change if you had millions of samples?</strong></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>✅ Answers</summary>
+<p><strong>1. When to use each method:</strong></p>
+<ul>
+<li><strong>Batch GD</strong>: Small to medium datasets, when you want smooth convergence</li>
+<li><strong>Mini-batch SGD</strong>: Large datasets, online learning, when memory is limited</li>
+<li><strong>Normal Equation</strong>: Small number of features (n &lt; 10,000), need exact solution</li>
+</ul>
+<p><strong>2. Computational complexity:</strong></p>
+<ul>
+<li><strong>Gradient Descent</strong>: O(k·m·n) where k = iterations, m = samples, n = features</li>
+<li><strong>Normal Equation</strong>: O(n³) due to matrix inversion + O(n²·m) for X^T X</li>
+</ul>
+<p><strong>3. Non-invertible X^T X:</strong></p>
+<ul>
+<li>Happens when features are linearly dependent (multicollinearity)</li>
+<li>Solutions:<ul>
+<li>Remove redundant features</li>
+<li>Use regularization (Ridge: adds λI to make it invertible)</li>
+<li>Use pseudo-inverse</li>
+<li>Use gradient descent instead</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Batch size effects:</strong></p>
+<ul>
+<li><strong>Small batches</strong> (1-32): Noisy updates, faster per iteration, may escape local minima</li>
+<li><strong>Large batches</strong> (256+): Stable updates, better hardware utilization, but slower per epoch</li>
+<li><strong>Sweet spot</strong>: Usually 32-128 for good balance</li>
+</ul>
+<p><strong>5. For millions of samples:</strong></p>
+<ul>
+<li>Use Mini-batch SGD (not Batch GD or Normal Equation)</li>
+<li>Consider smaller batch sizes for memory</li>
+<li>Use momentum-based optimizers (Adam, RMSprop)</li>
+<li>Consider distributed training</li>
+<li>May need early stopping to avoid overfitting</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="congratulations">Congratulations! 🎉<a class="anchor-link" href="#congratulations">¶</a></h2><p>You've successfully implemented Linear Regression from scratch using three different approaches:</p>
+<ol>
+<li>✅ Batch Gradient Descent</li>
+<li>✅ Mini-batch Stochastic Gradient Descent</li>
+<li>✅ Normal Equation (Closed-form)</li>
+</ol>
+<h3 id="key-takeaways">Key Takeaways<a class="anchor-link" href="#key-takeaways">¶</a></h3><ul>
+<li><strong>Vectorization</strong> is crucial for efficient implementation</li>
+<li><strong>Gradient descent</strong> works by iteratively moving towards the minimum</li>
+<li><strong>Mini-batch SGD</strong> balances speed and stability</li>
+<li><strong>Normal Equation</strong> gives exact solution but doesn't scale to large features</li>
+<li>All methods converge to similar solutions for linear regression</li>
+</ul>
+<h3 id="next-steps">Next Steps<a class="anchor-link" href="#next-steps">¶</a></h3><ul>
+<li>Try with different datasets</li>
+<li>Experiment with different learning rates and batch sizes</li>
+<li>Add regularization (Ridge, Lasso)</li>
+<li>Implement feature scaling/normalization</li>
+<li>Visualize the loss curves</li>
+</ul>
+<p>For complete reference implementations, check out the <strong>Solution Reference</strong> notebook!</p>
+<hr/>
 </div>
 </div>
 </div>

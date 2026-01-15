@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://harish-tamilarasan.github.io/ML_Engineer_From_Scratch/</loc>
-         <lastmod>2026-01-05</lastmod>
-    </url>
-    <url>
-         <loc>https://harish-tamilarasan.github.io/ML_Engineer_From_Scratch/supervised/linear_regression/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-15</lastmod>
     </url>
     <url>
          <loc>https://harish-tamilarasan.github.io/ML_Engineer_From_Scratch/supervised/linear_regression/experimentation/</loc>
-         <lastmod>2026-01-05</lastmod>
+         <lastmod>2026-01-15</lastmod>
+    </url>
+    <url>
+         <loc>https://harish-tamilarasan.github.io/ML_Engineer_From_Scratch/supervised/linear_regression/tutorial/</loc>
+         <lastmod>2026-01-15</lastmod>
     </url>
 </urlset>
