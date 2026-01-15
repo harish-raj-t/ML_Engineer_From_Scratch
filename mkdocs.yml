@@ -4,13 +4,20 @@ docs_dir: docs
 
 theme:
   name: material
+  custom_dir: docs/overrides
   features:
     - navigation.sections
     - navigation.expand
     - content.code.copy
+    - toc.integrate
 
 plugins:
-  - mkdocs-jupyter
+  - mkdocs-jupyter:
+      include_source: True
+      execute: False
+      allow_errors: False
+      theme: light
+      include_requirejs: True
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -27,8 +34,5 @@ nav:
   - Home: README.md
   - Supervised Learning:
       - Linear Regression:
-          - Overview: supervised/linear_regression/index.md
           - Tutorial (Exercises): supervised/linear_regression/tutorial.ipynb
           - Solution Reference: supervised/linear_regression/experimentation.ipynb
-          - Interactive Demo (JS): supervised/linear_regression/interactive.html
-          - Interactive Demo (Python): supervised/linear_regression/interactive_pyscript.html
