@@ -2,11 +2,11 @@
 
 {% block content %}
   {% if page.file.src_path.endswith('.ipynb') %}
-  <div style="margin-bottom: 20px; padding: 10px; background-color: #f5f5f5; border-radius: 5px;">
+  <div style="margin-bottom: 20px; padding: 10px; background-color: #f5f5f5; border-radius: 5px; display: flex; align-items: center; gap: 10px;">
     <a href="https://colab.research.google.com/github/harish-raj-t/ML_Engineer_From_Scratch/blob/main/docs/{{ page.file.src_path }}" target="_blank">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="height: 30px;"/>
     </a>
-    <button onclick="downloadNotebook('https://raw.githubusercontent.com/harish-raj-t/ML_Engineer_From_Scratch/main/docs/{{ page.file.src_path }}', '{{ page.file.name }}')" style="background-color: #2196F3; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">
+    <button onclick="downloadNotebook('https://raw.githubusercontent.com/harish-raj-t/ML_Engineer_From_Scratch/main/docs/{{ page.file.src_path }}', '{{ page.file.src_path.split('/')[-1] }}')" style="background-color: #2196F3; color: white; padding: 6px 16px; border: none; border-radius: 4px; cursor: pointer; height: 30px; font-size: 14px; white-space: nowrap;">
       📥 Download Notebook
     </button>
   </div>
